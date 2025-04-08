@@ -289,25 +289,22 @@ header {
   width: 100%;
   height: 60px;
   z-index: 1000;
-  background-color: rgba(255, 255, 255, 0.2); /* semi-transparent white */
-  backdrop-filter: blur(10px); /* glass effect */
-  -webkit-backdrop-filter: blur(10px); /* Safari support */
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* subtle border */
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 body {
-  padding-top: 60px; /* Prevent content from hiding behind header */
-  background: url('your-background-image.jpg') no-repeat center center fixed; /* Make sure the body has a visible background */
-  background-size: cover; /* Make sure the background covers the full page */
+  padding-top: 60px;
 }
 
-/* Dark mode */
 body.dark-mode header {
-  background-color: rgba(31, 41, 55, 0.2) !important; /* Dark mode transparency */
+  background-color: rgba(31, 41, 55, 0.2) !important;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* subtle border in dark mode */
-  }
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
 </head>
 <body class="light-mode">
 <!-- Header -->

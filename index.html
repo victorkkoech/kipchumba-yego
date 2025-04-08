@@ -1,0 +1,1551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meshack Kipchumba - Journalist, Media Expert & Graphic Designer</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#4338ca',secondary:'#8b5cf6',accent:'#f97316'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<style>
+:root {
+--primary: #4338ca;
+--secondary: #8b5cf6;
+--accent: #f97316;
+--bg-light: #f9fafb;
+--bg-dark: #1f2937;
+--text-light: #1f2937;
+--text-dark: #f9fafb;
+}
+body.light-mode {
+--bg-color: var(--bg-light);
+--text-color: var(--text-light);
+--card-bg: #ffffff;
+--card-border: #e5e7eb;
+--section-alt-bg: #f3f4f6;
+}
+body.dark-mode {
+--bg-color: var(--bg-dark);
+--text-color: var(--text-dark);
+--card-bg: #374151;
+--card-border: #4b5563;
+--section-alt-bg: #111827;
+}
+body {
+background-color: var(--bg-color);
+color: var(--text-color);
+transition: background-color 0.3s ease, color 0.3s ease;
+}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Inter', sans-serif;
+scroll-behavior: smooth;
+transition: background-color 0.3s ease, color 0.3s ease;
+}
+@keyframes fadeIn {
+from { opacity: 0; transform: translateY(10px); }
+to { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeIn {
+animation: fadeIn 0.5s ease-in-out;
+}
+body.light-mode {
+background-color: var(--bg-light);
+color: var(--text-light);
+}
+body.dark-mode {
+background-color: var(--bg-dark);
+color: var(--text-dark);
+}
+body.dark-mode .bg-white {
+background-color: #374151 !important;
+}
+body.dark-mode .bg-gray-50 {
+background-color: #1f2937 !important;
+}
+body.dark-mode .text-gray-700,
+body.dark-mode .text-gray-800,
+body.dark-mode .text-gray-900 {
+color: #f3f4f6 !important;
+}
+body.dark-mode .text-gray-600 {
+color: #d1d5db !important;
+}
+body.dark-mode .border-gray-300 {
+border-color: #4b5563 !important;
+}
+body.dark-mode .bg-gradient-to-r {
+background-image: none !important;
+background-color: #111827 !important;
+}
+body.dark-mode .shadow-sm {
+box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3) !important;
+}
+body.dark-mode .bg-primary\/10 {
+background-color: rgba(67, 56, 202, 0.2) !important;
+}
+body.dark-mode input,
+body.dark-mode textarea {
+background-color: #4b5563 !important;
+color: #f3f4f6 !important;
+border-color: #6b7280 !important;
+}
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+color: #9ca3af !important;
+}
+body.dark-mode .skill-bar {
+background-color: #4b5563 !important;
+}
+body.dark-mode header {
+background-color: #1f2937 !important;
+}
+body.dark-mode header .text-gray-800 {
+color: #f3f4f6 !important;
+}
+body.dark-mode #mobile-menu {
+background-color: #1f2937 !important;
+}
+.hero-section {
+min-height: 85vh;
+background-position: center;
+background-size: cover;
+position: relative;
+}
+.hero-section::before {
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: linear-gradient(90deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.2) 100%);
+}
+.nav-link {
+position: relative;
+}
+.nav-link::after {
+content: '';
+position: absolute;
+width: 0;
+height: 2px;
+bottom: -4px;
+left: 0;
+background-color: #4338ca;
+transition: width 0.3s ease;
+}
+.nav-link:hover::after {
+width: 100%;
+}
+.active::after {
+width: 100%;
+}
+.custom-checkbox {
+appearance: none;
+-webkit-appearance: none;
+width: 20px;
+height: 20px;
+border: 2px solid #4338ca;
+border-radius: 4px;
+margin-right: 8px;
+position: relative;
+cursor: pointer;
+transition: all 0.2s ease;
+}
+.custom-checkbox:checked {
+background-color: #4338ca;
+}
+.custom-checkbox:checked::after {
+content: '';
+position: absolute;
+top: 2px;
+left: 6px;
+width: 5px;
+height: 10px;
+border: solid white;
+border-width: 0 2px 2px 0;
+transform: rotate(45deg);
+}
+.toggle-switch {
+position: relative;
+display: inline-block;
+width: 50px;
+height: 24px;
+}
+.toggle-switch input {
+opacity: 0;
+width: 0;
+height: 0;
+}
+.toggle-slider {
+position: absolute;
+cursor: pointer;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #ccc;
+transition: .4s;
+border-radius: 34px;
+}
+.toggle-slider:before {
+position: absolute;
+content: "";
+height: 18px;
+width: 18px;
+left: 3px;
+bottom: 3px;
+background-color: white;
+transition: .4s;
+border-radius: 50%;
+}
+input:checked + .toggle-slider {
+background-color: #4338ca;
+}
+input:checked + .toggle-slider:before {
+transform: translateX(26px);
+}
+.portfolio-item {
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.portfolio-item:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+.service-card {
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.service-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+.animated-bg {
+background: linear-gradient(-45deg, #4338ca, #8b5cf6, #f97316, #4338ca);
+background-size: 400% 400%;
+animation: gradient 15s ease infinite;
+}
+@keyframes gradient {
+0% {
+background-position: 0% 50%;
+}
+50% {
+background-position: 100% 50%;
+}
+100% {
+background-position: 0% 50%;
+}
+}
+.skill-bar {
+height: 10px;
+border-radius: 5px;
+background-color: #e5e7eb;
+position: relative;
+overflow: hidden;
+}
+.skill-progress {
+height: 100%;
+border-radius: 5px;
+background: linear-gradient(90deg, #4338ca, #8b5cf6);
+position: absolute;
+top: 0;
+left: 0;
+transition: width 1s ease-in-out;
+}
+.testimonial-card {
+transition: all 0.3s ease;
+}
+.testimonial-card:hover {
+transform: translateY(-10px);
+box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+.back-to-top {
+position: fixed;
+bottom: 30px;
+right: 30px;
+z-index: 99;
+opacity: 0;
+visibility: hidden;
+transition: all 0.3s ease;
+}
+.back-to-top.visible {
+opacity: 1;
+visibility: visible;
+}
+@media (max-width: 768px) {
+.hero-section {
+min-height: 70vh;
+}
+}
+</style>
+</head>
+<body class="light-mode">
+<!-- Header -->
+<header class="fixed w-full bg-white shadow-sm z-50 transition-all duration-300" id="navbar">
+<div class="container mx-auto px-4 py-3 flex justify-between items-center">
+<a href="#" class="text-2xl font-['Pacifico'] text-primary flex items-center">
+<span class="text-primary">Meshack</span>
+<span class="text-accent ml-1 hidden sm:inline">Kipchumba</span>
+</a>
+<!-- Desktop Navigation -->
+<nav class="hidden md:flex items-center space-x-8">
+<a href="#home" class="nav-link active text-gray-800 hover:text-primary transition-colors">Home</a>
+<a href="#about" class="nav-link text-gray-800 hover:text-primary transition-colors">About</a>
+<a href="#portfolio" class="nav-link text-gray-800 hover:text-primary transition-colors">Portfolio</a>
+<a href="#experience" class="nav-link text-gray-800 hover:text-primary transition-colors">Experience</a>
+<a href="#services" class="nav-link text-gray-800 hover:text-primary transition-colors">Services</a>
+<a href="#blog" class="nav-link text-gray-800 hover:text-primary transition-colors">Blog</a>
+<a href="#skills" class="nav-link text-gray-800 hover:text-primary transition-colors">Skills</a>
+<a href="#testimonials" class="nav-link text-gray-800 hover:text-primary transition-colors">Testimonials</a>
+<a href="#contact" class="nav-link text-gray-800 hover:text-primary transition-colors">Contact</a>
+</nav>
+<div class="flex items-center space-x-4">
+<div class="hidden sm:flex items-center">
+<span class="mr-2 text-sm text-gray-600">Light</span>
+<label class="toggle-switch">
+<input type="checkbox" id="theme-toggle">
+<span class="toggle-slider"></span>
+</label>
+<span class="ml-2 text-sm text-gray-600">Dark</span>
+</div>
+<!-- Mobile Menu Button -->
+<button class="md:hidden w-10 h-10 flex items-center justify-center text-gray-700" id="mobile-menu-button">
+<i class="ri-menu-line ri-lg"></i>
+</button>
+</div>
+</div>
+<!-- Mobile Navigation (Hidden by default) -->
+<div class="hidden bg-white px-4 py-3 shadow-lg md:hidden" id="mobile-menu">
+<div class="flex flex-col space-y-3">
+<a href="#home" class="text-gray-800 hover:text-primary py-2 transition-colors">Home</a>
+<a href="#about" class="text-gray-800 hover:text-primary py-2 transition-colors">About</a>
+<a href="#portfolio" class="text-gray-800 hover:text-primary py-2 transition-colors">Portfolio</a>
+<a href="#experience" class="text-gray-800 hover:text-primary py-2 transition-colors">Experience</a>
+<a href="#services" class="text-gray-800 hover:text-primary py-2 transition-colors">Services</a>
+<a href="#blog" class="text-gray-800 hover:text-primary py-2 transition-colors">Blog</a>
+<a href="#skills" class="text-gray-800 hover:text-primary py-2 transition-colors">Skills</a>
+<a href="#testimonials" class="text-gray-800 hover:text-primary py-2 transition-colors">Testimonials</a>
+<a href="#contact" class="text-gray-800 hover:text-primary py-2 transition-colors">Contact</a>
+<div class="flex items-center py-2">
+<span class="mr-2 text-sm text-gray-600">Light</span>
+<label class="toggle-switch">
+<input type="checkbox" id="mobile-theme-toggle">
+<span class="toggle-slider"></span>
+</label>
+<span class="ml-2 text-sm text-gray-600">Dark</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<section id="home" class="hero-section w-full" style="background-image: url('https://public.readdy.ai/ai/img_res/6cae6c7928571feffcfb619aa12558a4.jpg')">
+<div class="container mx-auto px-4 h-full flex items-center relative z-10">
+<div class="w-full max-w-2xl text-white">
+<div class="animate-fade-in-down">
+<span class="inline-block px-4 py-2 bg-accent text-white rounded-full text-sm font-medium mb-4 animate-pulse">Available for freelance work</span>
+<h1 class="text-5xl md:text-6xl font-bold mb-4">Hi, I'm <span class="text-accent">Meshack Kipchumba</span></h1>
+<p class="text-xl md:text-2xl mb-8">A journalist, media expert, and graphic designer dedicated to storytelling and visual creativity.</p>
+<div class="flex flex-wrap gap-4">
+<a href="#portfolio" class="bg-primary hover:bg-primary/90 text-white px-6 py-3 !rounded-button font-medium transition-colors whitespace-nowrap flex items-center">
+<i class="ri-gallery-line mr-2"></i> View Portfolio
+</a>
+<a href="#contact" class="bg-white hover:bg-gray-100 text-gray-900 px-6 py-3 !rounded-button font-medium transition-colors whitespace-nowrap flex items-center">
+<i class="ri-mail-line mr-2"></i> Contact Me
+</a>
+</div>
+<div class="flex mt-12 space-x-6">
+<a href="#" class="text-white hover:text-accent transition-colors">
+<div class="w-10 h-10 flex items-center justify-center border border-white/30 rounded-full hover:border-accent">
+<i class="ri-twitter-x-line ri-lg"></i>
+</div>
+</a>
+<a href="#" class="text-white hover:text-accent transition-colors">
+<div class="w-10 h-10 flex items-center justify-center border border-white/30 rounded-full hover:border-accent">
+<i class="ri-linkedin-line ri-lg"></i>
+</div>
+</a>
+<a href="#" class="text-white hover:text-accent transition-colors">
+<div class="w-10 h-10 flex items-center justify-center border border-white/30 rounded-full hover:border-accent">
+<i class="ri-instagram-line ri-lg"></i>
+</div>
+</a>
+<a href="#" class="text-white hover:text-accent transition-colors">
+<div class="w-10 h-10 flex items-center justify-center border border-white/30 rounded-full hover:border-accent">
+<i class="ri-behance-line ri-lg"></i>
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce hidden md:block">
+<a href="#about" class="text-white">
+<div class="w-10 h-10 flex items-center justify-center border border-white/30 rounded-full">
+<i class="ri-arrow-down-line ri-lg"></i>
+</div>
+</a>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section id="about" class="py-20 bg-gradient-to-r from-indigo-50 to-purple-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<span class="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">About Me</span>
+<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Know Me Better</h2>
+<div class="w-20 h-1 bg-primary mx-auto"></div>
+</div>
+<div class="flex flex-col md:flex-row gap-12 items-center">
+<div class="md:w-2/5">
+<div class="relative group">
+<div class="absolute -top-4 -left-4 w-full h-full border-2 border-primary rounded-lg transition-all duration-300 group-hover:-top-6 group-hover:-left-6"></div>
+<div class="absolute inset-0 bg-accent/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+<img src="https://static.readdy.ai/image/49e926186a8814daea3e0bc88df2d56a/add887531b873cded10eb43d905f8770.jpeg" alt="Meshack Kipchumba" class="w-full h-auto rounded-lg object-cover relative z-10">
+</div>
+</div>
+<div class="md:w-3/5">
+<div class="flex items-center mb-4">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 text-primary rounded-full mr-4">
+<i class="ri-user-3-line ri-lg"></i>
+</div>
+<h3 class="text-2xl font-bold text-gray-900">Journalist, Media Expert & Graphic Designer</h3>
+</div>
+<p class="text-gray-700 mb-6">I am a passionate professional with over 5 years of experience in journalism, media production, and graphic design. My work focuses on creating compelling visual narratives and impactful stories that resonate with audiences across different platforms.</p>
+<p class="text-gray-700 mb-8">With a background in both traditional and digital media, I bring a unique perspective to every project. My approach combines journalistic integrity with creative design thinking to deliver authentic and engaging content.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+<div class="bg-gray-50 p-4 rounded-lg shadow-sm hover:shadow-md transition-all duration-300">
+<div class="flex items-center mb-2">
+<div class="w-10 h-10 flex items-center justify-center text-primary">
+<i class="ri-mail-line ri-lg"></i>
+</div>
+<h4 class="font-semibold text-gray-900">Email</h4>
+</div>
+<p class="text-gray-700">kipchumbayego890@gmail.com</p>
+</div>
+<div class="bg-gray-50 p-4 rounded-lg shadow-sm hover:shadow-md transition-all duration-300">
+<div class="flex items-center mb-2">
+<div class="w-10 h-10 flex items-center justify-center text-primary">
+<i class="ri-phone-line ri-lg"></i>
+</div>
+<h4 class="font-semibold text-gray-900">Phone</h4>
+</div>
+<p class="text-gray-700">0725969066</p>
+</div>
+<div class="bg-gray-50 p-4 rounded-lg shadow-sm hover:shadow-md transition-all duration-300">
+<div class="flex items-center mb-2">
+<div class="w-10 h-10 flex items-center justify-center text-primary">
+<i class="ri-map-pin-line ri-lg"></i>
+</div>
+<h4 class="font-semibold text-gray-900">Location</h4>
+</div>
+<p class="text-gray-700">Nairobi, Kenya</p>
+</div>
+<div class="bg-gray-50 p-4 rounded-lg shadow-sm hover:shadow-md transition-all duration-300">
+<div class="flex items-center mb-2">
+<div class="w-10 h-10 flex items-center justify-center text-primary">
+<i class="ri-global-line ri-lg"></i>
+</div>
+<h4 class="font-semibold text-gray-900">Languages</h4>
+</div>
+<p class="text-gray-700">English, Swahili</p>
+</div>
+</div>
+<div class="flex flex-wrap gap-4">
+<a href="#" class="inline-flex items-center bg-primary hover:bg-primary/90 text-white px-6 py-3 !rounded-button font-medium transition-colors whitespace-nowrap">
+<div class="w-5 h-5 flex items-center justify-center mr-2">
+<i class="ri-download-line"></i>
+</div>
+Download CV
+</a>
+<a href="#contact" class="inline-flex items-center bg-accent hover:bg-accent/90 text-white px-6 py-3 !rounded-button font-medium transition-colors whitespace-nowrap">
+<div class="w-5 h-5 flex items-center justify-center mr-2">
+<i class="ri-chat-1-line"></i>
+</div>
+Let's Talk
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Portfolio Section -->
+<section id="portfolio" class="py-20 bg-gradient-to-r from-blue-50 to-indigo-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<span class="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">My Work</span>
+<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Featured Portfolio</h2>
+<div class="w-20 h-1 bg-primary mx-auto mb-8"></div>
+<p class="text-gray-700 max-w-2xl mx-auto">Explore my creative work across different domains including graphic design, journalism, and media projects.</p>
+</div>
+<!-- Portfolio Filters -->
+<div class="flex flex-wrap justify-center gap-4 mb-12">
+<button class="bg-primary text-white px-6 py-2 !rounded-button font-medium transition-colors whitespace-nowrap">All</button>
+<button class="bg-white text-gray-800 hover:bg-gray-100 px-6 py-2 !rounded-button font-medium transition-colors whitespace-nowrap">Graphic Design</button>
+<button class="bg-white text-gray-800 hover:bg-gray-100 px-6 py-2 !rounded-button font-medium transition-colors whitespace-nowrap">Journalism</button>
+<button class="bg-white text-gray-800 hover:bg-gray-100 px-6 py-2 !rounded-button font-medium transition-colors whitespace-nowrap">Media</button>
+</div>
+<!-- Portfolio Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Portfolio Item 1 -->
+<div class="portfolio-item bg-white rounded-lg overflow-hidden shadow-sm transition-colors duration-300">
+<div class="h-64 overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/f2ce0d43578bec9274e2485d2b9ea110.jpg" alt="Branding Project" class="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105">
+</div>
+<div class="p-6">
+<span class="inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium mb-3">Graphic Design</span>
+<h3 class="text-xl font-bold text-gray-900 mb-2">Corporate Rebranding</h3>
+<p class="text-gray-700 mb-4">Complete brand identity redesign for a financial services company.</p>
+<a href="#" class="text-primary font-medium hover:underline flex items-center">
+View Details
+<div class="w-5 h-5 flex items-center justify-center ml-1">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+<!-- Portfolio Item 2 -->
+<div class="portfolio-item bg-white rounded-lg overflow-hidden shadow-sm transition-colors duration-300">
+<div class="h-64 overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/28300de3f5132363e9a79654d2a973f7.jpg" alt="Journalism Project" class="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105">
+</div>
+<div class="p-6">
+<span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-medium mb-3">Journalism</span>
+<h3 class="text-xl font-bold text-gray-900 mb-2">Investigative Report</h3>
+<p class="text-gray-700 mb-4">Award-winning investigative piece on environmental conservation efforts.</p>
+<a href="#" class="text-primary font-medium hover:underline flex items-center">
+Read Article
+<div class="w-5 h-5 flex items-center justify-center ml-1">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+<!-- Portfolio Item 3 -->
+<div class="portfolio-item bg-white rounded-lg overflow-hidden shadow-sm transition-colors duration-300">
+<div class="h-64 overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/d4e459e2446e0be66d95104fd71b9ea2.jpg" alt="Media Project" class="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105">
+</div>
+<div class="p-6">
+<span class="inline-block px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-xs font-medium mb-3">Media</span>
+<h3 class="text-xl font-bold text-gray-900 mb-2">Documentary Production</h3>
+<p class="text-gray-700 mb-4">Short documentary on local artisans preserving traditional crafts.</p>
+<a href="#" class="text-primary font-medium hover:underline flex items-center">
+Watch Preview
+<div class="w-5 h-5 flex items-center justify-center ml-1">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+<!-- Portfolio Item 4 -->
+<div class="portfolio-item bg-white rounded-lg overflow-hidden shadow-sm transition-colors duration-300">
+<div class="h-64 overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/d17460860fc0df34c1d2be2cfb53215c.jpg" alt="Editorial Design" class="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105">
+</div>
+<div class="p-6">
+<span class="inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium mb-3">Graphic Design</span>
+<h3 class="text-xl font-bold text-gray-900 mb-2">Magazine Redesign</h3>
+<p class="text-gray-700 mb-4">Complete editorial design for a lifestyle magazine's print edition.</p>
+<a href="#" class="text-primary font-medium hover:underline flex items-center">
+View Details
+<div class="w-5 h-5 flex items-center justify-center ml-1">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+<!-- Portfolio Item 5 -->
+<div class="portfolio-item bg-white rounded-lg overflow-hidden shadow-sm transition-colors duration-300">
+<div class="h-64 overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/184c66499c82b2149527547c96e2e4e2.jpg" alt="News Reporting" class="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105">
+</div>
+<div class="p-6">
+<span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-medium mb-3">Journalism</span>
+<h3 class="text-xl font-bold text-gray-900 mb-2">Feature Series</h3>
+<p class="text-gray-700 mb-4">Three-part feature series on healthcare innovations in rural communities.</p>
+<a href="#" class="text-primary font-medium hover:underline flex items-center">
+Read Articles
+<div class="w-5 h-5 flex items-center justify-center ml-1">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+<!-- Portfolio Item 6 -->
+<div class="portfolio-item bg-white rounded-lg overflow-hidden shadow-sm transition-colors duration-300">
+<div class="h-64 overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/88b561caa69b267da190ba9f4f16f569.jpg" alt="Social Media Campaign" class="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105">
+</div>
+<div class="p-6">
+<span class="inline-block px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-xs font-medium mb-3">Media</span>
+<h3 class="text-xl font-bold text-gray-900 mb-2">Digital Campaign</h3>
+<p class="text-gray-700 mb-4">Integrated social media campaign for a non-profit organization.</p>
+<a href="#" class="text-primary font-medium hover:underline flex items-center">
+View Case Study
+<div class="w-5 h-5 flex items-center justify-center ml-1">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="text-center mt-12">
+<a href="https://readdy.ai/home/29ad1170-30c7-4601-9c32-c827670146e4/50b44763-a062-47ee-915d-bd58fd4c15c3" data-readdy="true" class="inline-flex items-center bg-primary hover:bg-primary/90 text-white px-6 py-3 !rounded-button font-medium transition-colors whitespace-nowrap">
+View All Projects
+<div class="w-5 h-5 flex items-center justify-center ml-2">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+</section>
+<!-- Experience & Education Section -->
+<section id="experience" class="py-20 bg-gradient-to-r from-purple-50 to-pink-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<span class="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">My Journey</span>
+<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Experience & Education</h2>
+<div class="w-20 h-1 bg-primary mx-auto mb-8"></div>
+<p class="text-gray-700 max-w-2xl mx-auto">My professional journey and educational background that have shaped my expertise.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<!-- Work Experience -->
+<div>
+<h3 class="text-2xl font-bold text-gray-900 mb-8 flex items-center">
+<div class="w-10 h-10 flex items-center justify-center text-primary mr-3">
+<i class="ri-briefcase-line ri-lg"></i>
+</div>
+Work Experience
+</h3>
+<div class="relative pl-8 border-l-2 border-gray-200 space-y-12">
+<!-- Job 1 -->
+<div class="relative">
+<div class="absolute -left-[17px] top-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white">
+<i class="ri-radio-button-line"></i>
+</div>
+<div class="bg-gray-50 p-6 rounded-lg shadow-sm transition-colors duration-300">
+<span class="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-medium mb-3">2025 - Present</span>
+<h4 class="text-xl font-bold text-gray-900 mb-2">Volunteer</h4>
+<p class="text-gray-700 mb-2">Taach FM</p>
+<p class="text-gray-600">Contributing to radio production, content creation, and community outreach programs. Responsible for graphic design needs and social media content.</p>
+</div>
+</div>
+<!-- Job 2 -->
+<div class="relative">
+<div class="absolute -left-[17px] top-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white">
+<i class="ri-radio-button-line"></i>
+</div>
+<div class="bg-gray-50 p-6 rounded-lg shadow-sm transition-colors duration-300">
+<span class="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-medium mb-3">Aug - Dec 2024</span>
+<h4 class="text-xl font-bold text-gray-900 mb-2">Media Specialist</h4>
+<p class="text-gray-700 mb-2">Kenya Deposit Insurance Corporation</p>
+<p class="text-gray-600">Managed media relations, created visual content for campaigns, and assisted in developing communication strategies for public awareness initiatives.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Education -->
+<div>
+<h3 class="text-2xl font-bold text-gray-900 mb-8 flex items-center">
+<div class="w-10 h-10 flex items-center justify-center text-primary mr-3">
+<i class="ri-graduation-cap-line ri-lg"></i>
+</div>
+Education
+</h3>
+<div class="relative pl-8 border-l-2 border-gray-200 space-y-8">
+<!-- Education 1 -->
+<div class="relative">
+<div class="absolute -left-[17px] top-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white">
+<i class="ri-radio-button-line"></i>
+</div>
+<div class="bg-gray-50 p-6 rounded-lg shadow-sm transition-colors duration-300">
+<span class="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-medium mb-3">2024</span>
+<h4 class="text-xl font-bold text-gray-900 mb-2">Graphic Design</h4>
+<p class="text-gray-700 mb-2">IYF Weekend Academy</p>
+<p class="text-gray-600">Specialized training in digital design, branding, and visual communication.</p>
+</div>
+</div>
+<!-- Education 2 -->
+<div class="relative">
+<div class="absolute -left-[17px] top-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white">
+<i class="ri-radio-button-line"></i>
+</div>
+<div class="bg-gray-50 p-6 rounded-lg shadow-sm transition-colors duration-300">
+<span class="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-medium mb-3">2021 - 2022</span>
+<h4 class="text-xl font-bold text-gray-900 mb-2">Diploma in Journalism & Media Studies</h4>
+<p class="text-gray-600">Comprehensive training in journalism principles, media production, and communication theory.</p>
+</div>
+</div>
+<!-- Education 3 -->
+<div class="relative">
+<div class="absolute -left-[17px] top-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white">
+<i class="ri-radio-button-line"></i>
+</div>
+<div class="bg-gray-50 p-6 rounded-lg shadow-sm transition-colors duration-300">
+<span class="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-medium mb-3">2020 - 2021</span>
+<h4 class="text-xl font-bold text-gray-900 mb-2">Certificate in Journalism & Media Studies</h4>
+<p class="text-gray-600">Foundation studies in journalism, media ethics, and basic production techniques.</p>
+</div>
+</div>
+<!-- Education 4 -->
+<div class="relative">
+<div class="absolute -left-[17px] top-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white">
+<i class="ri-radio-button-line"></i>
+</div>
+<div class="bg-gray-50 p-6 rounded-lg shadow-sm transition-colors duration-300">
+<span class="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-medium mb-3">2015 - 2018</span>
+<h4 class="text-xl font-bold text-gray-900 mb-2">KCSE</h4>
+<p class="text-gray-700 mb-2">St. John's Tachasisi</p>
+</div>
+</div>
+<!-- Education 5 -->
+<div class="relative">
+<div class="absolute -left-[17px] top-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white">
+<i class="ri-radio-button-line"></i>
+</div>
+<div class="bg-gray-50 p-6 rounded-lg shadow-sm transition-colors duration-300">
+<span class="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-medium mb-3">2006 - 2014</span>
+<h4 class="text-xl font-bold text-gray-900 mb-2">KCPE</h4>
+<p class="text-gray-700 mb-2">St. Peter's Preparatory</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section id="services" class="py-20 bg-gradient-to-r from-indigo-50 to-blue-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<span class="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">What I Do</span>
+<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">My Services</h2>
+<div class="w-20 h-1 bg-primary mx-auto mb-8"></div>
+<p class="text-gray-700 max-w-2xl mx-auto">Professional services I offer across journalism, media production, and graphic design.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Service 1 -->
+<div class="service-card bg-white rounded-lg overflow-hidden shadow-sm transition-colors duration-300">
+<div class="p-8">
+<div class="w-16 h-16 flex items-center justify-center text-primary bg-primary/10 rounded-full mb-6">
+<i class="ri-palette-line ri-2x"></i>
+</div>
+<h3 class="text-xl font-bold text-gray-900 mb-4">Graphic Design</h3>
+<ul class="space-y-3 text-gray-700 mb-6">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-0.5">
+<i class="ri-check-line"></i>
+</div>
+<span>Brand Identity & Logo Design</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-0.5">
+<i class="ri-check-line"></i>
+</div>
+<span>Marketing & Promotional Materials</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-0.5">
+<i class="ri-check-line"></i>
+</div>
+<span>Editorial & Publication Design</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-0.5">
+<i class="ri-check-line"></i>
+</div>
+<span>Digital Artwork & Illustrations</span>
+</li>
+</ul>
+<a href="#contact" class="inline-block bg-primary hover:bg-primary/90 text-white px-6 py-3 !rounded-button font-medium transition-colors whitespace-nowrap">Get Started</a>
+</div>
+</div>
+<!-- Service 2 -->
+<div class="service-card bg-white rounded-lg overflow-hidden shadow-sm transition-colors duration-300">
+<div class="p-8">
+<div class="w-16 h-16 flex items-center justify-center text-primary bg-primary/10 rounded-full mb-6">
+<i class="ri-article-line ri-2x"></i>
+</div>
+<h3 class="text-xl font-bold text-gray-900 mb-4">Journalism</h3>
+<ul class="space-y-3 text-gray-700 mb-6">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-0.5">
+<i class="ri-check-line"></i>
+</div>
+<span>Feature Article Writing</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-0.5">
+<i class="ri-check-line"></i>
+</div>
+<span>Investigative Reporting</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-0.5">
+<i class="ri-check-line"></i>
+</div>
+<span>Editorial Content Development</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-0.5">
+<i class="ri-check-line"></i>
+</div>
+<span>News Reporting & Analysis</span>
+</li>
+</ul>
+<a href="#contact" class="inline-block bg-primary hover:bg-primary/90 text-white px-6 py-3 !rounded-button font-medium transition-colors whitespace-nowrap">Get Started</a>
+</div>
+</div>
+<!-- Service 3 -->
+<div class="service-card bg-white rounded-lg overflow-hidden shadow-sm transition-colors duration-300">
+<div class="p-8">
+<div class="w-16 h-16 flex items-center justify-center text-primary bg-primary/10 rounded-full mb-6">
+<i class="ri-vidicon-line ri-2x"></i>
+</div>
+<h3 class="text-xl font-bold text-gray-900 mb-4">Media Consulting</h3>
+<ul class="space-y-3 text-gray-700 mb-6">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-0.5">
+<i class="ri-check-line"></i>
+</div>
+<span>Public Relations Strategy</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-0.5">
+<i class="ri-check-line"></i>
+</div>
+<span>Content Strategy Development</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-0.5">
+<i class="ri-check-line"></i>
+</div>
+<span>Digital Media Planning</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-0.5">
+<i class="ri-check-line"></i>
+</div>
+<span>Media Training & Workshops</span>
+</li>
+</ul>
+<a href="#contact" class="inline-block bg-primary hover:bg-primary/90 text-white px-6 py-3 !rounded-button font-medium transition-colors whitespace-nowrap">Get Started</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Blog Section -->
+<section id="blog" class="py-20 bg-gradient-to-r from-orange-50 to-amber-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<span class="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">My Blog</span>
+<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Latest Articles</h2>
+<div class="w-20 h-1 bg-primary mx-auto mb-8"></div>
+<p class="text-gray-700 max-w-2xl mx-auto">Insights, opinions, and analysis from my journalistic perspective.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Blog Post 1 -->
+<div class="bg-white rounded-lg overflow-hidden shadow-sm transition-colors duration-300">
+<div class="h-48 overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/009f76052bbb443665004ef884d07be8.jpg" alt="Digital Media Trends" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex items-center justify-between mb-3">
+<span class="text-sm text-gray-500">April 5, 2025</span>
+<span class="text-sm text-gray-500 flex items-center">
+<div class="w-4 h-4 flex items-center justify-center mr-1">
+<i class="ri-time-line"></i>
+</div>
+5 min read
+</span>
+</div>
+<h3 class="text-xl font-bold text-gray-900 mb-3">The Evolution of Digital Media in 2025</h3>
+<p class="text-gray-700 mb-4">Exploring how digital platforms are reshaping journalism and content consumption in the modern era.</p>
+<a href="#" class="text-primary font-medium hover:underline flex items-center">
+Read More
+<div class="w-5 h-5 flex items-center justify-center ml-1">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+<!-- Blog Post 2 -->
+<div class="bg-white rounded-lg overflow-hidden shadow-sm transition-colors duration-300">
+<div class="h-48 overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/71b04d2840753b4cf5523cc77b8d07fa.jpg" alt="Design Principles" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex items-center justify-between mb-3">
+<span class="text-sm text-gray-500">March 22, 2025</span>
+<span class="text-sm text-gray-500 flex items-center">
+<div class="w-4 h-4 flex items-center justify-center mr-1">
+<i class="ri-time-line"></i>
+</div>
+7 min read
+</span>
+</div>
+<h3 class="text-xl font-bold text-gray-900 mb-3">Essential Design Principles for Effective Visual Communication</h3>
+<p class="text-gray-700 mb-4">Breaking down the fundamental design principles that create impactful visual narratives.</p>
+<a href="#" class="text-primary font-medium hover:underline flex items-center">
+Read More
+<div class="w-5 h-5 flex items-center justify-center ml-1">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+<!-- Blog Post 3 -->
+<div class="bg-white rounded-lg overflow-hidden shadow-sm transition-colors duration-300">
+<div class="h-48 overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/2e8d58c97c985dbb6272f95c5387fd28.jpg" alt="Community Journalism" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex items-center justify-between mb-3">
+<span class="text-sm text-gray-500">March 10, 2025</span>
+<span class="text-sm text-gray-500 flex items-center">
+<div class="w-4 h-4 flex items-center justify-center mr-1">
+<i class="ri-time-line"></i>
+</div>
+6 min read
+</span>
+</div>
+<h3 class="text-xl font-bold text-gray-900 mb-3">The Power of Community Journalism in Rural Areas</h3>
+<p class="text-gray-700 mb-4">How local reporting continues to serve as a vital information source for underserved communities.</p>
+<a href="#" class="text-primary font-medium hover:underline flex items-center">
+Read More
+<div class="w-5 h-5 flex items-center justify-center ml-1">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="text-center mt-12">
+<a href="https://readdy.ai/home/29ad1170-30c7-4601-9c32-c827670146e4/154f44a0-2593-43f2-a123-1a40157146f8" data-readdy="true" class="inline-flex items-center bg-primary hover:bg-primary/90 text-white px-6 py-3 !rounded-button font-medium transition-colors whitespace-nowrap">
+View All Articles
+<div class="w-5 h-5 flex items-center justify-center ml-2">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+</section>
+<!-- Skills Section -->
+<section id="skills" class="py-20 bg-gradient-to-r from-blue-50 to-cyan-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<span class="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">My Expertise</span>
+<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Professional Skills</h2>
+<div class="w-20 h-1 bg-primary mx-auto mb-8"></div>
+<p class="text-gray-700 max-w-2xl mx-auto">A showcase of my technical abilities and professional competencies.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div>
+<h3 class="text-2xl font-bold text-gray-900 mb-8 flex items-center">
+<div class="w-10 h-10 flex items-center justify-center text-primary mr-3">
+<i class="ri-tools-line ri-lg"></i>
+</div>
+Technical Skills
+</h3>
+<div class="space-y-6">
+<!-- Skill 1 -->
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-medium text-gray-800">Graphic Design</span>
+<span class="text-primary">90%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress" style="width: 90%"></div>
+</div>
+</div>
+<!-- Skill 2 -->
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-medium text-gray-800">Journalism & Content Writing</span>
+<span class="text-primary">85%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress" style="width: 85%"></div>
+</div>
+</div>
+<!-- Skill 3 -->
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-medium text-gray-800">Media Production</span>
+<span class="text-primary">80%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress" style="width: 80%"></div>
+</div>
+</div>
+<!-- Skill 4 -->
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-medium text-gray-800">Photography</span>
+<span class="text-primary">75%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress" style="width: 75%"></div>
+</div>
+</div>
+<!-- Skill 5 -->
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-medium text-gray-800">Video Editing</span>
+<span class="text-primary">70%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress" style="width: 70%"></div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<h3 class="text-2xl font-bold text-gray-900 mb-8 flex items-center">
+<div class="w-10 h-10 flex items-center justify-center text-primary mr-3">
+<i class="ri-user-settings-line ri-lg"></i>
+</div>
+Professional Skills
+</h3>
+<div class="space-y-6">
+<!-- Skill 1 -->
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-medium text-gray-800">Communication</span>
+<span class="text-primary">95%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress" style="width: 95%"></div>
+</div>
+</div>
+<!-- Skill 2 -->
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-medium text-gray-800">Creativity</span>
+<span class="text-primary">90%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress" style="width: 90%"></div>
+</div>
+</div>
+<!-- Skill 3 -->
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-medium text-gray-800">Problem Solving</span>
+<span class="text-primary">85%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress" style="width: 85%"></div>
+</div>
+</div>
+<!-- Skill 4 -->
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-medium text-gray-800">Teamwork</span>
+<span class="text-primary">90%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress" style="width: 90%"></div>
+</div>
+</div>
+<!-- Skill 5 -->
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-medium text-gray-800">Time Management</span>
+<span class="text-primary">80%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress" style="width: 80%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
+<div class="bg-white p-6 rounded-lg shadow-sm text-center transition-colors duration-300">
+<div class="w-16 h-16 flex items-center justify-center text-primary bg-primary/10 rounded-full mx-auto mb-4">
+<i class="ri-adobe-photoshop-line ri-2x"></i>
+</div>
+<h4 class="font-semibold text-gray-900">Adobe Photoshop</h4>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm text-center transition-colors duration-300">
+<div class="w-16 h-16 flex items-center justify-center text-primary bg-primary/10 rounded-full mx-auto mb-4">
+<i class="ri-adobe-illustrator-line ri-2x"></i>
+</div>
+<h4 class="font-semibold text-gray-900">Adobe Illustrator</h4>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm text-center transition-colors duration-300">
+<div class="w-16 h-16 flex items-center justify-center text-primary bg-primary/10 rounded-full mx-auto mb-4">
+<i class="ri-camera-line ri-2x"></i>
+</div>
+<h4 class="font-semibold text-gray-900">Photography</h4>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm text-center transition-colors duration-300">
+<div class="w-16 h-16 flex items-center justify-center text-primary bg-primary/10 rounded-full mx-auto mb-4">
+<i class="ri-movie-line ri-2x"></i>
+</div>
+<h4 class="font-semibold text-gray-900">Video Editing</h4>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials Section -->
+<section id="testimonials" class="py-20 bg-gradient-to-r from-purple-50 to-indigo-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<span class="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">What People Say</span>
+<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Client Testimonials</h2>
+<div class="w-20 h-1 bg-primary mx-auto mb-8"></div>
+<p class="text-gray-700 max-w-2xl mx-auto">Feedback from clients and collaborators about my work and professional approach.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Testimonial 1 -->
+<div class="testimonial-card bg-white p-8 rounded-lg shadow-sm transition-colors duration-300">
+<div class="flex justify-center mb-6">
+<div class="w-16 h-16 flex items-center justify-center text-accent">
+<i class="ri-double-quotes-l ri-3x"></i>
+</div>
+</div>
+<p class="text-gray-700 mb-6 text-center">"Meshack's journalistic skills and eye for design made our campaign stand out. His ability to tell compelling stories through both words and visuals is exceptional."</p>
+<div class="flex items-center justify-center">
+<img src="https://public.readdy.ai/ai/img_res/6e4c5f1644dff752fdf7ec15ad4c30f3.jpg" alt="Jane Muthoni" class="w-12 h-12 rounded-full object-cover mr-4">
+<div>
+<h4 class="font-semibold text-gray-900">Jane Muthoni</h4>
+<p class="text-sm text-gray-600">Marketing Director, Savannah Media</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="testimonial-card bg-white p-8 rounded-lg shadow-sm transition-colors duration-300">
+<div class="flex justify-center mb-6">
+<div class="w-16 h-16 flex items-center justify-center text-accent">
+<i class="ri-double-quotes-l ri-3x"></i>
+</div>
+</div>
+<p class="text-gray-700 mb-6 text-center">"Working with Meshack on our brand redesign was a pleasure. He understood our vision perfectly and delivered a cohesive identity that truly represents our values."</p>
+<div class="flex items-center justify-center">
+<img src="https://public.readdy.ai/ai/img_res/e044cfbb80042ef4a4262b9d46c01697.jpg" alt="David Ochieng" class="w-12 h-12 rounded-full object-cover mr-4">
+<div>
+<h4 class="font-semibold text-gray-900">David Ochieng</h4>
+<p class="text-sm text-gray-600">Founder, EcoTech Solutions</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="testimonial-card bg-white p-8 rounded-lg shadow-sm transition-colors duration-300">
+<div class="flex justify-center mb-6">
+<div class="w-16 h-16 flex items-center justify-center text-accent">
+<i class="ri-double-quotes-l ri-3x"></i>
+</div>
+</div>
+<p class="text-gray-700 mb-6 text-center">"Meshack's investigative reporting for our publication was thorough and impactful. His attention to detail and commitment to journalistic integrity is commendable."</p>
+<div class="flex items-center justify-center">
+<img src="https://public.readdy.ai/ai/img_res/ad7bdad3d58ba9eacd25488809c882a1.jpg" alt="Sarah Kimani" class="w-12 h-12 rounded-full object-cover mr-4">
+<div>
+<h4 class="font-semibold text-gray-900">Sarah Kimani</h4>
+<p class="text-sm text-gray-600">Editor-in-Chief, Kenya Daily</p>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-16 text-center">
+<div class="animated-bg text-white py-12 px-6 rounded-lg">
+<h3 class="text-2xl font-bold mb-6">Ready to work together?</h3>
+<p class="mb-8 max-w-2xl mx-auto">Let's collaborate on your next project and create something amazing together.</p>
+<a href="#contact" class="inline-flex items-center bg-white text-primary hover:bg-gray-100 px-6 py-3 !rounded-button font-medium transition-colors whitespace-nowrap">
+<div class="w-5 h-5 flex items-center justify-center mr-2">
+<i class="ri-chat-1-line"></i>
+</div>
+Start a Conversation
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section id="contact" class="py-20 bg-gradient-to-r from-indigo-50 to-violet-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<span class="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">Contact Me</span>
+<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
+<div class="w-20 h-1 bg-primary mx-auto mb-8"></div>
+<p class="text-gray-700 max-w-2xl mx-auto">Have a project in mind or want to discuss a collaboration? I'd love to hear from you.</p>
+</div>
+<div class="flex flex-col md:flex-row gap-12">
+<!-- Contact Form -->
+<div class="md:w-3/5 bg-white p-8 rounded-lg shadow-sm transition-colors duration-300">
+<h3 class="text-2xl font-bold text-gray-900 mb-6">Send Me a Message</h3>
+<form>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div>
+<label for="name" class="block text-sm font-medium text-gray-700 mb-2">Your Name</label>
+<input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary" placeholder="John Doe">
+</div>
+<div>
+<label for="email" class="block text-sm font-medium text-gray-700 mb-2">Your Email</label>
+<input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary" placeholder="john@example.com">
+</div>
+</div>
+<div class="mb-6">
+<label for="subject" class="block text-sm font-medium text-gray-700 mb-2">Subject</label>
+<input type="text" id="subject" class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary" placeholder="Project Inquiry">
+</div>
+<div class="mb-6">
+<label for="message" class="block text-sm font-medium text-gray-700 mb-2">Your Message</label>
+<textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary" placeholder="Tell me about your project..."></textarea>
+</div>
+<div class="mb-6 flex items-start">
+<input type="checkbox" id="terms" class="custom-checkbox">
+<label for="terms" class="text-sm text-gray-700">I agree to the processing of personal data according to the privacy policy</label>
+</div>
+<button type="submit" class="w-full bg-primary hover:bg-primary/90 text-white px-6 py-3 !rounded-button font-medium transition-colors whitespace-nowrap">Send Message</button>
+</form>
+</div>
+<!-- Contact Information -->
+<div class="md:w-2/5">
+<div class="bg-white p-8 rounded-lg shadow-sm mb-8 transition-colors duration-300">
+<h3 class="text-2xl font-bold text-gray-900 mb-6">Contact Information</h3>
+<div class="space-y-6">
+<div class="flex items-start">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 text-primary rounded-full mr-4">
+<i class="ri-mail-line ri-lg"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-900 mb-1">Email</h4>
+<p class="text-gray-700">kipchumbayego890@gmail.com</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 text-primary rounded-full mr-4">
+<i class="ri-phone-line ri-lg"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-900 mb-1">Phone</h4>
+<p class="text-gray-700">0725969066</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 text-primary rounded-full mr-4">
+<i class="ri-map-pin-line ri-lg"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-900 mb-1">Location</h4>
+<p class="text-gray-700">Nairobi, Kenya</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white p-8 rounded-lg shadow-sm transition-colors duration-300">
+<h3 class="text-2xl font-bold text-gray-900 mb-6">Follow Me</h3>
+<div class="flex space-x-4">
+<a href="#" class="w-12 h-12 flex items-center justify-center bg-primary/10 text-primary rounded-full hover:bg-primary hover:text-white transition-colors">
+<i class="ri-twitter-x-line ri-lg"></i>
+</a>
+<a href="#" class="w-12 h-12 flex items-center justify-center bg-primary/10 text-primary rounded-full hover:bg-primary hover:text-white transition-colors">
+<i class="ri-linkedin-line ri-lg"></i>
+</a>
+<a href="#" class="w-12 h-12 flex items-center justify-center bg-primary/10 text-primary rounded-full hover:bg-primary hover:text-white transition-colors">
+<i class="ri-instagram-line ri-lg"></i>
+</a>
+<a href="#" class="w-12 h-12 flex items-center justify-center bg-primary/10 text-primary rounded-full hover:bg-primary hover:text-white transition-colors">
+<i class="ri-behance-line ri-lg"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-gray-900 text-white py-12">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+<div>
+<a href="#" class="text-2xl font-['Pacifico'] text-white mb-4 inline-block">Meshack</a>
+<p class="text-gray-400 mb-6">Journalist, Media Expert & Graphic Designer dedicated to storytelling and visual creativity.</p>
+<div class="flex space-x-4">
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-twitter-x-line"></i>
+</div>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-linkedin-line"></i>
+</div>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-instagram-line"></i>
+</div>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-behance-line"></i>
+</div>
+</a>
+</div>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+<ul class="space-y-2">
+<li><a href="#home" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+<li><a href="#about" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+<li><a href="#portfolio" class="text-gray-400 hover:text-white transition-colors">Portfolio</a></li>
+<li><a href="#experience" class="text-gray-400 hover:text-white transition-colors">Experience</a></li>
+<li><a href="#services" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-4">Services</h4>
+<ul class="space-y-2">
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Graphic Design</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Journalism</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Media Consulting</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Content Creation</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Brand Strategy</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-4">Newsletter</h4>
+<p class="text-gray-400 mb-4">Subscribe to receive updates on my latest work and articles.</p>
+<form class="flex">
+<input type="email" placeholder="Your email" class="px-4 py-2 w-full border-none rounded-l focus:outline-none text-gray-900">
+<button type="submit" class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-r whitespace-nowrap">Subscribe</button>
+</form>
+</div>
+</div>
+<div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-400 text-sm mb-4 md:mb-0">© 2025 Meshack Kipchumba. All rights reserved.</p>
+<div class="flex space-x-6">
+<a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Privacy Policy</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Terms of Service</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Cookie Policy</a>
+</div>
+</div>
+</div>
+</footer>
+<a href="#" class="back-to-top bg-primary hover:bg-primary/90 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg" id="back-to-top">
+<i class="ri-arrow-up-line ri-lg"></i>
+</a>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+// Mobile Menu Toggle
+const menuButton = document.getElementById('mobile-menu-button');
+const mobileMenu = document.getElementById('mobile-menu');
+menuButton.addEventListener('click', function() {
+mobileMenu.classList.toggle('hidden');
+});
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function(e) {
+e.preventDefault();
+const targetId = this.getAttribute('href');
+const targetElement = document.querySelector(targetId);
+if (targetElement) {
+window.scrollTo({
+top: targetElement.offsetTop - 80,
+behavior: 'smooth'
+});
+// Close mobile menu if open
+if (!mobileMenu.classList.contains('hidden')) {
+mobileMenu.classList.add('hidden');
+}
+}
+});
+});
+// Portfolio filter functionality
+const filterButtons = document.querySelectorAll('#portfolio .flex.flex-wrap.justify-center button');
+const portfolioItems = document.querySelectorAll('.portfolio-item');
+filterButtons.forEach(button => {
+button.addEventListener('click', function() {
+// Remove active class from all buttons
+filterButtons.forEach(btn => {
+btn.classList.remove('bg-primary', 'text-white');
+btn.classList.add('bg-white', 'text-gray-800', 'hover:bg-gray-100');
+});
+// Add active class to clicked button
+this.classList.remove('bg-white', 'text-gray-800', 'hover:bg-gray-100');
+this.classList.add('bg-primary', 'text-white');
+// Get the filter category
+const filterCategory = this.textContent.trim().toLowerCase();
+// Filter portfolio items
+portfolioItems.forEach(item => {
+const itemCategory = item.querySelector('span.inline-block').textContent.trim().toLowerCase();
+if (filterCategory === 'all' || itemCategory === filterCategory) {
+item.style.display = 'block';
+// Add animation
+item.classList.add('animate-fadeIn');
+setTimeout(() => {
+item.classList.remove('animate-fadeIn');
+}, 500);
+} else {
+item.style.display = 'none';
+}
+});
+});
+});
+// Navbar scroll effect
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', function() {
+if (window.scrollY > 100) {
+navbar.classList.add('py-2', 'shadow-md');
+navbar.classList.remove('py-3', 'shadow-sm');
+} else {
+navbar.classList.add('py-3', 'shadow-sm');
+navbar.classList.remove('py-2', 'shadow-md');
+}
+});
+// Back to top button
+const backToTopButton = document.getElementById('back-to-top');
+window.addEventListener('scroll', function() {
+if (window.scrollY > 500) {
+backToTopButton.classList.add('visible');
+} else {
+backToTopButton.classList.remove('visible');
+}
+});
+backToTopButton.addEventListener('click', function(e) {
+e.preventDefault();
+window.scrollTo({
+top: 0,
+behavior: 'smooth'
+});
+});
+// Theme toggle functionality
+const themeToggle = document.getElementById('theme-toggle');
+const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
+const body = document.body;
+// Check for saved theme preference or use preferred color scheme
+const savedTheme = localStorage.getItem('theme');
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+// Set initial theme
+if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+body.classList.add('dark-mode');
+themeToggle.checked = true;
+mobileThemeToggle.checked = true;
+} else {
+body.classList.add('light-mode');
+themeToggle.checked = false;
+mobileThemeToggle.checked = false;
+}
+function toggleDarkMode() {
+if (body.classList.contains('light-mode')) {
+body.classList.replace('light-mode', 'dark-mode');
+localStorage.setItem('theme', 'dark');
+// Update section backgrounds for dark mode
+document.querySelectorAll('section').forEach(section => {
+if (section.classList.contains('bg-gradient-to-r')) {
+section.classList.add('dark:bg-gray-800');
+}
+});
+// Update cards and other elements
+document.querySelectorAll('.bg-white, .bg-gray-50').forEach(el => {
+el.classList.add('dark:bg-gray-700', 'dark:text-gray-100');
+});
+// Update text colors
+document.querySelectorAll('.text-gray-700, .text-gray-800, .text-gray-900').forEach(el => {
+el.classList.add('dark:text-gray-200');
+});
+} else {
+body.classList.replace('dark-mode', 'light-mode');
+localStorage.setItem('theme', 'light');
+// Reset section backgrounds for light mode
+document.querySelectorAll('section').forEach(section => {
+if (section.classList.contains('bg-gradient-to-r')) {
+section.classList.remove('dark:bg-gray-800');
+}
+});
+// Reset cards and other elements
+document.querySelectorAll('.bg-white, .bg-gray-50').forEach(el => {
+el.classList.remove('dark:bg-gray-700', 'dark:text-gray-100');
+});
+// Reset text colors
+document.querySelectorAll('.text-gray-700, .text-gray-800, .text-gray-900').forEach(el => {
+el.classList.remove('dark:text-gray-200');
+});
+}
+// Show theme change notification
+const notification = document.createElement('div');
+notification.className = 'fixed top-20 right-4 bg-primary text-white px-4 py-2 rounded-lg shadow-lg z-50';
+notification.textContent = body.classList.contains('dark-mode') ? 'Dark mode enabled' : 'Light mode enabled';
+document.body.appendChild(notification);
+setTimeout(() => {
+notification.remove();
+}, 2000);
+}
+themeToggle.addEventListener('change', toggleDarkMode);
+mobileThemeToggle.addEventListener('change', toggleDarkMode);
+// Sync both toggles
+themeToggle.addEventListener('change', () => {
+mobileThemeToggle.checked = themeToggle.checked;
+});
+mobileThemeToggle.addEventListener('change', () => {
+themeToggle.checked = mobileThemeToggle.checked;
+});
+// Animate skill bars on scroll
+const skillBars = document.querySelectorAll('.skill-progress');
+const animateSkills = () => {
+skillBars.forEach(bar => {
+const barPosition = bar.getBoundingClientRect().top;
+const screenPosition = window.innerHeight / 1.3;
+if (barPosition < screenPosition) {
+bar.style.width = bar.parentElement.getAttribute('data-progress') || bar.style.width;
+}
+});
+};
+// Set initial width to 0 for animation
+skillBars.forEach(bar => {
+const width = bar.style.width;
+bar.parentElement.setAttribute('data-progress', width);
+bar.style.width = '0';
+});
+window.addEventListener('scroll', animateSkills);
+// Trigger once on load
+setTimeout(animateSkills, 500);
+// Form submission
+const contactForm = document.querySelector('#contact form');
+if (contactForm) {
+contactForm.addEventListener('submit', function(e) {
+e.preventDefault();
+const formData = new FormData(this);
+const formValues = Object.fromEntries(formData.entries());
+// Validate form
+let isValid = true;
+const name = formValues.name || document.getElementById('name').value;
+const email = formValues.email || document.getElementById('email').value;
+const message = formValues.message || document.getElementById('message').value;
+if (!name || !email || !message) {
+isValid = false;
+}
+if (isValid) {
+// Show success message
+const successMessage = document.createElement('div');
+successMessage.className = 'mt-4 p-4 bg-green-100 text-green-800 rounded-lg';
+successMessage.innerHTML = '<p class="font-medium">Thank you for your message!</p><p>I will get back to you soon.</p>';
+contactForm.appendChild(successMessage);
+contactForm.reset();
+setTimeout(() => {
+successMessage.remove();
+}, 5000);
+} else {
+// Show error message
+const errorMessage = document.createElement('div');
+errorMessage.className = 'mt-4 p-4 bg-red-100 text-red-800 rounded-lg';
+errorMessage.innerHTML = '<p class="font-medium">Please fill in all required fields.</p>';
+contactForm.appendChild(errorMessage);
+setTimeout(() => {
+errorMessage.remove();
+}, 3000);
+}
+});
+}
+});
+</script>
+</body>
+</html>

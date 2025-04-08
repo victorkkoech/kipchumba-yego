@@ -292,20 +292,20 @@ header {
   background-color: rgba(255, 255, 255, 0.2); /* semi-transparent */
   backdrop-filter: blur(10px); /* glass effect */
   -webkit-backdrop-filter: blur(10px); /* Safari support */
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* subtle border */
 }
 
 body {
-  padding-top: 60px;
+  padding-top: 60px; /* Prevent content from hiding behind header */
 }
 
+/* Dark mode */
 body.dark-mode header {
-  background-color: rgba(31, 41, 55, 0.2) !important;
+  background-color: rgba(31, 41, 55, 0.2) !important; /* Dark mode transparency */
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* subtle border in dark mode */
 }
-</style>
 </head>
 <body class="light-mode">
 <!-- Header -->

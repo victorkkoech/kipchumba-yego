@@ -1,435 +1,935 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meshack Kipchumba - Blog Articles</title>
-    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
-    <script>tailwind.config={theme:{extend:{colors:{primary:'#3b82f6',secondary:'#10b981'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
-    <style>
-        :where([class^="ri-"])::before { content: "\f3c2"; }
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        .article-card:hover {
-            transform: translateY(-4px);
-        }
-        input[type="search"]::-webkit-search-decoration,
-        input[type="search"]::-webkit-search-cancel-button,
-        input[type="search"]::-webkit-search-results-button,
-        input[type="search"]::-webkit-search-results-decoration {
-            display: none;
-        }
-        input[type="search"] {
-            -webkit-appearance: none;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio Projects - Meshack Kipchumba</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#4338ca',secondary:'#8b5cf6'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+  font-family: 'Inter', sans-serif;
+  scroll-behavior: smooth;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+:root {
+  --primary: #4338ca;
+  --secondary: #8b5cf6;
+  --accent: #f97316;
+  --bg-light: #f9fafb;
+  --bg-dark: #1f2937;
+  --text-light: #1f2937;
+  --text-dark: #f9fafb;
+}
+body.light-mode {
+  --bg-color: var(--bg-light);
+  --text-color: var(--text-light);
+  --card-bg: #ffffff;
+  --card-border: #e5e7eb;
+  --section-alt-bg: #f3f4f6;
+}
+body.dark-mode {
+  --bg-color: var(--bg-dark);
+  --text-color: var(--text-dark);
+  --card-bg: #374151;
+  --card-border: #4b5563;
+  --section-alt-bg: #111827;
+}
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+body.dark-mode .bg-white {
+  background-color: #374151 !important;
+}
+body.dark-mode .bg-gray-50 {
+  background-color: #1f2937 !important;
+}
+body.dark-mode .text-gray-700,
+body.dark-mode .text-gray-800,
+body.dark-mode .text-gray-900 {
+  color: #f3f4f6 !important;
+}
+body.dark-mode .text-gray-600 {
+  color: #d1d5db !important;
+}
+body.dark-mode .border-gray-300 {
+  border-color: #4b5563 !important;
+}
+body.dark-mode input,
+body.dark-mode textarea {
+  background-color: #4b5563 !important;
+  color: #f3f4f6 !important;
+  border-color: #6b7280 !important;
+}
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+  color: #9ca3af !important;
+}
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #4338ca;
+  transition: width 0.3s ease;
+}
+.nav-link:hover::after {
+  width: 100%;
+}
+.active::after {
+  width: 100%;
+}
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+.toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+input:checked + .toggle-slider {
+  background-color: #4338ca;
+}
+input:checked + .toggle-slider:before {
+  transform: translateX(26px);
+}
+.portfolio-item {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.portfolio-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+.category-filter {
+  transition: all 0.3s ease;
+}
+.category-filter.active {
+  background-color: var(--primary);
+  color: white;
+}
+.search-input {
+  transition: all 0.3s ease;
+}
+.search-input:focus {
+  box-shadow: 0 0 0 3px rgba(67, 56, 202, 0.3);
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-in-out;
+}
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+}
+@keyframes skeleton-loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+</style>
 </head>
-<body class="bg-gray-50 min-h-screen">
-    <!-- Header -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="https://readdy.ai/home/29ad1170-30c7-4601-9c32-c827670146e4/cfe2e9f3-e808-40b4-9036-9fae3d599417" data-readdy="true" class="text-2xl font-['Pacifico'] text-primary">Meshack</a>
-            
-            <nav class="hidden md:flex items-center space-x-8">
-                <a href="https://readdy.ai/home/29ad1170-30c7-4601-9c32-c827670146e4/cfe2e9f3-e808-40b4-9036-9fae3d599417" data-readdy="true" class="text-gray-600 hover:text-primary transition">Home</a>
-                <a href="#" class="text-primary font-medium">Blog</a>
-                <a href="#" class="text-gray-600 hover:text-primary transition">Portfolio</a>
-                <a href="#" class="text-gray-600 hover:text-primary transition">About</a>
-                <a href="#" class="text-gray-600 hover:text-primary transition">Contact</a>
-            </nav>
-            
-            <div class="flex items-center space-x-4">
-                <button class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-gray-200 transition">
-                    <i class="ri-moon-line text-lg"></i>
-                </button>
-                
-                <button class="md:hidden w-10 h-10 flex items-center justify-center">
-                    <i class="ri-menu-line text-xl"></i>
-                </button>
-            </div>
-        </div>
-    </header>
+<body class="light-mode">
+<!-- Header -->
+<header class="fixed w-full bg-white shadow-sm z-50 transition-all duration-300" id="navbar">
+<div class="container mx-auto px-4 py-3 flex justify-between items-center">
+<a href="https://readdy.ai/home/29ad1170-30c7-4601-9c32-c827670146e4/cfe2e9f3-e808-40b4-9036-9fae3d599417" data-readdy="true" class="text-2xl font-['Pacifico'] text-primary flex items-center">
+<span class="text-primary">Meshack</span>
+<span class="text-accent ml-1 hidden sm:inline">Kipchumba</span>
+</a>
+<!-- Desktop Navigation -->
+<nav class="hidden md:flex items-center space-x-8">
+<a href="https://readdy.ai/home/29ad1170-30c7-4601-9c32-c827670146e4/cfe2e9f3-e808-40b4-9036-9fae3d599417" data-readdy="true" class="nav-link text-gray-800 hover:text-primary transition-colors">Home</a>
+<a href="https://readdy.ai/home/29ad1170-30c7-4601-9c32-c827670146e4/cfe2e9f3-e808-40b4-9036-9fae3d599417#about" data-readdy="true" class="nav-link text-gray-800 hover:text-primary transition-colors">About</a>
+<a href="https://readdy.ai/home/29ad1170-30c7-4601-9c32-c827670146e4/cfe2e9f3-e808-40b4-9036-9fae3d599417#portfolio" data-readdy="true" class="nav-link active text-primary transition-colors">Portfolio</a>
+<a href="https://readdy.ai/home/29ad1170-30c7-4601-9c32-c827670146e4/cfe2e9f3-e808-40b4-9036-9fae3d599417#experience" data-readdy="true" class="nav-link text-gray-800 hover:text-primary transition-colors">Experience</a>
+<a href="https://readdy.ai/home/29ad1170-30c7-4601-9c32-c827670146e4/cfe2e9f3-e808-40b4-9036-9fae3d599417#services" data-readdy="true" class="nav-link text-gray-800 hover:text-primary transition-colors">Services</a>
+<a href="https://readdy.ai/home/29ad1170-30c7-4601-9c32-c827670146e4/cfe2e9f3-e808-40b4-9036-9fae3d599417#blog" data-readdy="true" class="nav-link text-gray-800 hover:text-primary transition-colors">Blog</a>
+<a href="https://readdy.ai/home/29ad1170-30c7-4601-9c32-c827670146e4/cfe2e9f3-e808-40b4-9036-9fae3d599417#contact" data-readdy="true" class="nav-link text-gray-800 hover:text-primary transition-colors">Contact</a>
+</nav>
+<div class="flex items-center space-x-4">
+<div class="hidden sm:flex items-center">
+<span class="mr-2 text-sm text-gray-600">Light</span>
+<label class="toggle-switch">
+<input type="checkbox" id="theme-toggle">
+<span class="toggle-slider"></span>
+</label>
+<span class="ml-2 text-sm text-gray-600">Dark</span>
+</div>
+<!-- Mobile Menu Button -->
+<button class="md:hidden w-10 h-10 flex items-center justify-center text-gray-700" id="mobile-menu-button">
+<i class="ri-menu-line ri-lg"></i>
+</button>
+</div>
+</div>
+<!-- Mobile Navigation (Hidden by default) -->
+<div class="hidden bg-white px-4 py-3 shadow-lg md:hidden" id="mobile-menu">
+<div class="flex flex-col space-y-3">
+<a href="https://readdy.ai/home/29ad1170-30c7-4601-9c32-c827670146e4/cfe2e9f3-e808-40b4-9036-9fae3d599417" data-readdy="true" class="text-gray-800 hover:text-primary py-2 transition-colors">Home</a>
+<a href="https://readdy.ai/home/29ad1170-30c7-4601-9c32-c827670146e4/cfe2e9f3-e808-40b4-9036-9fae3d599417#about" data-readdy="true" class="text-gray-800 hover:text-primary py-2 transition-colors">About</a>
+<a href="https://readdy.ai/home/29ad1170-30c7-4601-9c32-c827670146e4/cfe2e9f3-e808-40b4-9036-9fae3d599417#portfolio" data-readdy="true" class="text-primary py-2 transition-colors">Portfolio</a>
+<a href="https://readdy.ai/home/29ad1170-30c7-4601-9c32-c827670146e4/cfe2e9f3-e808-40b4-9036-9fae3d599417#experience" data-readdy="true" class="text-gray-800 hover:text-primary py-2 transition-colors">Experience</a>
+<a href="https://readdy.ai/home/29ad1170-30c7-4601-9c32-c827670146e4/cfe2e9f3-e808-40b4-9036-9fae3d599417#services" data-readdy="true" class="text-gray-800 hover:text-primary py-2 transition-colors">Services</a>
+<a href="https://readdy.ai/home/29ad1170-30c7-4601-9c32-c827670146e4/cfe2e9f3-e808-40b4-9036-9fae3d599417#blog" data-readdy="true" class="text-gray-800 hover:text-primary py-2 transition-colors">Blog</a>
+<a href="https://readdy.ai/home/29ad1170-30c7-4601-9c32-c827670146e4/cfe2e9f3-e808-40b4-9036-9fae3d599417#contact" data-readdy="true" class="text-gray-800 hover:text-primary py-2 transition-colors">Contact</a>
+<div class="flex items-center py-2">
+<span class="mr-2 text-sm text-gray-600">Light</span>
+<label class="toggle-switch">
+<input type="checkbox" id="mobile-theme-toggle">
+<span class="toggle-slider"></span>
+</label>
+<span class="ml-2 text-sm text-gray-600">Dark</span>
+</div>
+</div>
+</div>
+</header>
 
-    <!-- Page Title -->
-    <section class="bg-white border-b">
-        <div class="container mx-auto px-4 py-12">
-            <div class="flex items-center mb-4">
-                <a href="https://readdy.ai/home/29ad1170-30c7-4601-9c32-c827670146e4/cfe2e9f3-e808-40b4-9036-9fae3d599417" data-readdy="true" class="flex items-center text-gray-600 hover:text-primary transition">
-                    <i class="ri-arrow-left-line mr-2"></i>
-                    <span>Back to Home</span>
-                </a>
-            </div>
-            <h1 class="text-4xl font-bold text-gray-900">Blog Articles</h1>
-            <p class="mt-2 text-gray-600 max-w-2xl">Explore my thoughts, insights, and expertise on journalism, media, and graphic design through these articles.</p>
-        </div>
-    </section>
+<!-- Page Header -->
+<section class="pt-32 pb-16 bg-gradient-to-r from-indigo-50 to-purple-50">
+<div class="container mx-auto px-4">
+<div class="flex flex-col md:flex-row items-center justify-between">
+<div>
+<a href="https://readdy.ai/home/29ad1170-30c7-4601-9c32-c827670146e4/cfe2e9f3-e808-40b4-9036-9fae3d599417" data-readdy="true" class="inline-flex items-center text-primary hover:text-primary/80 mb-4 transition-colors">
+<div class="w-5 h-5 flex items-center justify-center mr-2">
+<i class="ri-arrow-left-line"></i>
+</div>
+Back to Home
+</a>
+<h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Portfolio Projects</h1>
+<p class="text-gray-700">Explore my complete collection of work across journalism, media, and graphic design.</p>
+</div>
+<div class="mt-6 md:mt-0">
+<img src="https://public.readdy.ai/ai/img_res/3e8d58c97c985dbb6272f95c5387fd28.jpg" alt="Portfolio Illustration" class="h-32 object-contain">
+</div>
+</div>
+</div>
+</section>
 
-    <!-- Filter and Search -->
-    <section class="bg-white py-6 border-b sticky top-[72px] z-40">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                <!-- Category Tabs -->
-                <div class="inline-flex p-1 bg-gray-100 rounded-full">
-                    <button class="px-4 py-2 rounded-full bg-primary text-white font-medium !rounded-button whitespace-nowrap">All</button>
-                    <button class="px-4 py-2 rounded-full text-gray-600 hover:bg-gray-200 font-medium !rounded-button whitespace-nowrap">Journalism</button>
-                    <button class="px-4 py-2 rounded-full text-gray-600 hover:bg-gray-200 font-medium !rounded-button whitespace-nowrap">Media</button>
-                    <button class="px-4 py-2 rounded-full text-gray-600 hover:bg-gray-200 font-medium !rounded-button whitespace-nowrap">Design</button>
-                </div>
-                
-                <!-- Search -->
-                <div class="relative w-full md:w-64">
-                    <input type="search" placeholder="Search articles..." class="w-full pl-10 pr-4 py-2 bg-gray-100 rounded-full text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary/20 border-none text-sm">
-                    <div class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center text-gray-500">
-                        <i class="ri-search-line"></i>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Active Filters -->
-            <div class="flex items-center gap-2 mt-4">
-                <span class="text-sm text-gray-500">Active filters:</span>
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary text-sm">
-                        All
-                        <button class="ml-1 w-4 h-4 flex items-center justify-center">
-                            <i class="ri-close-line text-xs"></i>
-                        </button>
-                    </span>
-                    <button class="text-sm text-gray-500 hover:text-primary">Clear all</button>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Filter Section -->
+<section class="py-8 bg-white sticky top-16 z-40 shadow-sm">
+<div class="container mx-auto px-4">
+<div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+<div class="w-full md:w-auto">
+<div class="relative">
+<input type="text" id="search-projects" placeholder="Search projects..." class="search-input w-full md:w-80 px-4 py-3 pr-10 border border-gray-300 rounded focus:outline-none focus:border-primary text-gray-700">
+<div class="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center text-gray-500">
+<i class="ri-search-line"></i>
+</div>
+</div>
+</div>
+<div class="flex flex-wrap gap-2">
+<button class="category-filter active bg-primary text-white px-4 py-2 !rounded-button font-medium transition-colors whitespace-nowrap" data-filter="all">All Projects</button>
+<button class="category-filter bg-white text-gray-800 hover:bg-gray-100 px-4 py-2 !rounded-button font-medium transition-colors whitespace-nowrap" data-filter="graphic-design">Graphic Design</button>
+<button class="category-filter bg-white text-gray-800 hover:bg-gray-100 px-4 py-2 !rounded-button font-medium transition-colors whitespace-nowrap" data-filter="journalism">Journalism</button>
+<button class="category-filter bg-white text-gray-800 hover:bg-gray-100 px-4 py-2 !rounded-button font-medium transition-colors whitespace-nowrap" data-filter="media">Media</button>
+</div>
+<div class="w-full md:w-auto mt-4 md:mt-0">
+<div class="relative">
+<button id="sort-button" class="flex items-center justify-between w-full md:w-48 px-4 py-3 bg-white border border-gray-300 rounded text-gray-700 focus:outline-none focus:border-primary">
+<span id="sort-label">Latest</span>
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-arrow-down-s-line"></i>
+</div>
+</button>
+<div id="sort-dropdown" class="hidden absolute top-full left-0 right-0 mt-1 bg-white border border-gray-300 rounded shadow-lg z-10">
+<div class="p-2">
+<button class="sort-option w-full text-left px-3 py-2 rounded hover:bg-gray-100 text-gray-700 active" data-sort="latest">Latest</button>
+<button class="sort-option w-full text-left px-3 py-2 rounded hover:bg-gray-100 text-gray-700" data-sort="oldest">Oldest</button>
+<button class="sort-option w-full text-left px-3 py-2 rounded hover:bg-gray-100 text-gray-700" data-sort="a-z">A-Z</button>
+<button class="sort-option w-full text-left px-3 py-2 rounded hover:bg-gray-100 text-gray-700" data-sort="z-a">Z-A</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-    <!-- Articles Grid -->
-    <main class="container mx-auto px-4 py-12">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Article 1 -->
-            <article class="bg-white rounded-lg shadow-sm overflow-hidden transition duration-300 article-card">
-                <div class="aspect-[16/9] overflow-hidden">
-                    <img src="https://public.readdy.ai/ai/img_res/0e9377b806e9dbe615b9f8943e502eb5.jpg" alt="The Future of Journalism" class="w-full h-full object-cover object-top">
-                </div>
-                <div class="p-6">
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="px-3 py-1 bg-blue-100 text-primary rounded-full text-xs font-medium">Journalism</span>
-                        <span class="text-gray-500 text-sm">5 min read</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">The Future of Journalism in the Digital Age</h3>
-                    <p class="text-gray-600 mb-4 line-clamp-3">Exploring how technology is reshaping journalism practices and what it means for media professionals in an increasingly digital landscape.</p>
-                    <div class="flex items-center justify-between">
-                        <span class="text-sm text-gray-500">April 2, 2025</span>
-                        <a href="#" class="text-primary font-medium flex items-center hover:underline !rounded-button whitespace-nowrap">
-                            Read more
-                            <i class="ri-arrow-right-line ml-1"></i>
-                        </a>
-                    </div>
-                </div>
-            </article>
+<!-- Portfolio Grid -->
+<section class="py-12 bg-gray-50 min-h-screen">
+<div class="container mx-auto px-4">
+<div id="portfolio-count" class="mb-8 text-gray-700">Showing all 15 projects</div>
+<div id="portfolio-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Portfolio Item 1 -->
+<div class="portfolio-item bg-white rounded-lg overflow-hidden shadow-sm transition-colors duration-300" data-category="graphic-design" data-date="2025-03-15">
+<div class="h-64 overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/f2ce0d43578bec9274e2485d2b9ea110.jpg" alt="Corporate Rebranding" class="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105">
+</div>
+<div class="p-6">
+<span class="inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium mb-3">Graphic Design</span>
+<h3 class="text-xl font-bold text-gray-900 mb-2">Corporate Rebranding</h3>
+<p class="text-gray-700 mb-4">Complete brand identity redesign for a financial services company, including logo, color palette, typography, and brand guidelines.</p>
+<a href="#" class="text-primary font-medium hover:underline flex items-center">
+View Details
+<div class="w-5 h-5 flex items-center justify-center ml-1">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
 
-            <!-- Article 2 -->
-            <article class="bg-white rounded-lg shadow-sm overflow-hidden transition duration-300 article-card">
-                <div class="aspect-[16/9] overflow-hidden">
-                    <img src="https://public.readdy.ai/ai/img_res/1b3a8871f93f693a484e8ee9d6d93d8c.jpg" alt="Design Principles" class="w-full h-full object-cover object-top">
-                </div>
-                <div class="p-6">
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="px-3 py-1 bg-green-100 text-green-600 rounded-full text-xs font-medium">Design</span>
-                        <span class="text-gray-500 text-sm">8 min read</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Essential Design Principles Every Graphic Designer Should Know</h3>
-                    <p class="text-gray-600 mb-4 line-clamp-3">A comprehensive guide to the fundamental principles that form the foundation of effective graphic design and visual communication.</p>
-                    <div class="flex items-center justify-between">
-                        <span class="text-sm text-gray-500">March 28, 2025</span>
-                        <a href="#" class="text-primary font-medium flex items-center hover:underline !rounded-button whitespace-nowrap">
-                            Read more
-                            <i class="ri-arrow-right-line ml-1"></i>
-                        </a>
-                    </div>
-                </div>
-            </article>
+<!-- Portfolio Item 2 -->
+<div class="portfolio-item bg-white rounded-lg overflow-hidden shadow-sm transition-colors duration-300" data-category="journalism" data-date="2025-02-28">
+<div class="h-64 overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/28300de3f5132363e9a79654d2a973f7.jpg" alt="Investigative Report" class="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105">
+</div>
+<div class="p-6">
+<span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-medium mb-3">Journalism</span>
+<h3 class="text-xl font-bold text-gray-900 mb-2">Investigative Report</h3>
+<p class="text-gray-700 mb-4">Award-winning investigative piece on environmental conservation efforts in the Lake Victoria region, highlighting community initiatives.</p>
+<a href="#" class="text-primary font-medium hover:underline flex items-center">
+Read Article
+<div class="w-5 h-5 flex items-center justify-center ml-1">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
 
-            <!-- Article 3 -->
-            <article class="bg-white rounded-lg shadow-sm overflow-hidden transition duration-300 article-card">
-                <div class="aspect-[16/9] overflow-hidden">
-                    <img src="https://public.readdy.ai/ai/img_res/18d9134ccb8d422d0a32e67fcea8cda3.jpg" alt="Media Production" class="w-full h-full object-cover object-top">
-                </div>
-                <div class="p-6">
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-xs font-medium">Media</span>
-                        <span class="text-gray-500 text-sm">6 min read</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">How to Build an Effective Media Production Team</h3>
-                    <p class="text-gray-600 mb-4 line-clamp-3">Insights into assembling and managing a high-performing media production team that delivers exceptional content consistently.</p>
-                    <div class="flex items-center justify-between">
-                        <span class="text-sm text-gray-500">March 21, 2025</span>
-                        <a href="#" class="text-primary font-medium flex items-center hover:underline !rounded-button whitespace-nowrap">
-                            Read more
-                            <i class="ri-arrow-right-line ml-1"></i>
-                        </a>
-                    </div>
-                </div>
-            </article>
+<!-- Portfolio Item 3 -->
+<div class="portfolio-item bg-white rounded-lg overflow-hidden shadow-sm transition-colors duration-300" data-category="media" data-date="2025-01-20">
+<div class="h-64 overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/d4e459e2446e0be66d95104fd71b9ea2.jpg" alt="Documentary Production" class="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105">
+</div>
+<div class="p-6">
+<span class="inline-block px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-xs font-medium mb-3">Media</span>
+<h3 class="text-xl font-bold text-gray-900 mb-2">Documentary Production</h3>
+<p class="text-gray-700 mb-4">Short documentary on local artisans preserving traditional crafts in rural Kenya, showcasing their techniques and cultural significance.</p>
+<a href="#" class="text-primary font-medium hover:underline flex items-center">
+Watch Preview
+<div class="w-5 h-5 flex items-center justify-center ml-1">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
 
-            <!-- Article 4 -->
-            <article class="bg-white rounded-lg shadow-sm overflow-hidden transition duration-300 article-card">
-                <div class="aspect-[16/9] overflow-hidden">
-                    <img src="https://public.readdy.ai/ai/img_res/ca28a620a6f685c9e3474a12c47bd510.jpg" alt="Ethical Journalism" class="w-full h-full object-cover object-top">
-                </div>
-                <div class="p-6">
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="px-3 py-1 bg-blue-100 text-primary rounded-full text-xs font-medium">Journalism</span>
-                        <span class="text-gray-500 text-sm">7 min read</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Ethical Challenges in Modern Journalism</h3>
-                    <p class="text-gray-600 mb-4 line-clamp-3">Examining the ethical dilemmas journalists face today and strategies for maintaining integrity in an era of misinformation and political polarization.</p>
-                    <div class="flex items-center justify-between">
-                        <span class="text-sm text-gray-500">March 15, 2025</span>
-                        <a href="#" class="text-primary font-medium flex items-center hover:underline !rounded-button whitespace-nowrap">
-                            Read more
-                            <i class="ri-arrow-right-line ml-1"></i>
-                        </a>
-                    </div>
-                </div>
-            </article>
+<!-- Portfolio Item 4 -->
+<div class="portfolio-item bg-white rounded-lg overflow-hidden shadow-sm transition-colors duration-300" data-category="graphic-design" data-date="2024-12-10">
+<div class="h-64 overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/d17460860fc0df34c1d2be2cfb53215c.jpg" alt="Magazine Redesign" class="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105">
+</div>
+<div class="p-6">
+<span class="inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium mb-3">Graphic Design</span>
+<h3 class="text-xl font-bold text-gray-900 mb-2">Magazine Redesign</h3>
+<p class="text-gray-700 mb-4">Complete editorial design for a lifestyle magazine's print edition, including layout templates, typography system, and visual identity.</p>
+<a href="#" class="text-primary font-medium hover:underline flex items-center">
+View Details
+<div class="w-5 h-5 flex items-center justify-center ml-1">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
 
-            <!-- Article 5 -->
-            <article class="bg-white rounded-lg shadow-sm overflow-hidden transition duration-300 article-card">
-                <div class="aspect-[16/9] overflow-hidden">
-                    <img src="https://public.readdy.ai/ai/img_res/0bf8872e1b86363648f73eef21d08382.jpg" alt="Brand Identity" class="w-full h-full object-cover object-top">
-                </div>
-                <div class="p-6">
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="px-3 py-1 bg-green-100 text-green-600 rounded-full text-xs font-medium">Design</span>
-                        <span class="text-gray-500 text-sm">9 min read</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Creating a Memorable Brand Identity Through Design</h3>
-                    <p class="text-gray-600 mb-4 line-clamp-3">A step-by-step guide to developing a cohesive and impactful brand identity that resonates with your target audience and stands out in the market.</p>
-                    <div class="flex items-center justify-between">
-                        <span class="text-sm text-gray-500">March 8, 2025</span>
-                        <a href="#" class="text-primary font-medium flex items-center hover:underline !rounded-button whitespace-nowrap">
-                            Read more
-                            <i class="ri-arrow-right-line ml-1"></i>
-                        </a>
-                    </div>
-                </div>
-            </article>
+<!-- Portfolio Item 5 -->
+<div class="portfolio-item bg-white rounded-lg overflow-hidden shadow-sm transition-colors duration-300" data-category="journalism" data-date="2024-11-15">
+<div class="h-64 overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/184c66499c82b2149527547c96e2e4e2.jpg" alt="Feature Series" class="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105">
+</div>
+<div class="p-6">
+<span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-medium mb-3">Journalism</span>
+<h3 class="text-xl font-bold text-gray-900 mb-2">Feature Series</h3>
+<p class="text-gray-700 mb-4">Three-part feature series on healthcare innovations in rural communities, examining telemedicine, mobile clinics, and community health workers.</p>
+<a href="#" class="text-primary font-medium hover:underline flex items-center">
+Read Articles
+<div class="w-5 h-5 flex items-center justify-center ml-1">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
 
-            <!-- Article 6 -->
-            <article class="bg-white rounded-lg shadow-sm overflow-hidden transition duration-300 article-card">
-                <div class="aspect-[16/9] overflow-hidden">
-                    <img src="https://public.readdy.ai/ai/img_res/7e152fcd9bb743a230e9eda408b8cebe.jpg" alt="Social Media Strategy" class="w-full h-full object-cover object-top">
-                </div>
-                <div class="p-6">
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-xs font-medium">Media</span>
-                        <span class="text-gray-500 text-sm">5 min read</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Developing an Effective Social Media Strategy for Media Organizations</h3>
-                    <p class="text-gray-600 mb-4 line-clamp-3">Strategic approaches to leveraging social media platforms to expand reach, engage audiences, and drive traffic to your media content.</p>
-                    <div class="flex items-center justify-between">
-                        <span class="text-sm text-gray-500">March 1, 2025</span>
-                        <a href="#" class="text-primary font-medium flex items-center hover:underline !rounded-button whitespace-nowrap">
-                            Read more
-                            <i class="ri-arrow-right-line ml-1"></i>
-                        </a>
-                    </div>
-                </div>
-            </article>
+<!-- Portfolio Item 6 -->
+<div class="portfolio-item bg-white rounded-lg overflow-hidden shadow-sm transition-colors duration-300" data-category="media" data-date="2024-10-05">
+<div class="h-64 overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/88b561caa69b267da190ba9f4f16f569.jpg" alt="Digital Campaign" class="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105">
+</div>
+<div class="p-6">
+<span class="inline-block px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-xs font-medium mb-3">Media</span>
+<h3 class="text-xl font-bold text-gray-900 mb-2">Digital Campaign</h3>
+<p class="text-gray-700 mb-4">Integrated social media campaign for a non-profit organization focused on youth education, including strategy, content creation, and analytics.</p>
+<a href="#" class="text-primary font-medium hover:underline flex items-center">
+View Case Study
+<div class="w-5 h-5 flex items-center justify-center ml-1">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
 
-            <!-- Article 7 -->
-            <article class="bg-white rounded-lg shadow-sm overflow-hidden transition duration-300 article-card">
-                <div class="aspect-[16/9] overflow-hidden">
-                    <img src="https://public.readdy.ai/ai/img_res/ff36527ae9a86211dab841edde887a26.jpg" alt="Conflict Reporting" class="w-full h-full object-cover object-top">
-                </div>
-                <div class="p-6">
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="px-3 py-1 bg-blue-100 text-primary rounded-full text-xs font-medium">Journalism</span>
-                        <span class="text-gray-500 text-sm">10 min read</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">The Art and Ethics of Conflict Reporting</h3>
-                    <p class="text-gray-600 mb-4 line-clamp-3">An in-depth look at the challenges, responsibilities, and best practices for journalists covering conflicts and crisis situations around the world.</p>
-                    <div class="flex items-center justify-between">
-                        <span class="text-sm text-gray-500">February 22, 2025</span>
-                        <a href="#" class="text-primary font-medium flex items-center hover:underline !rounded-button whitespace-nowrap">
-                            Read more
-                            <i class="ri-arrow-right-line ml-1"></i>
-                        </a>
-                    </div>
-                </div>
-            </article>
+<!-- Portfolio Item 7 -->
+<div class="portfolio-item bg-white rounded-lg overflow-hidden shadow-sm transition-colors duration-300" data-category="graphic-design" data-date="2024-09-18">
+<div class="h-64 overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/a7b561caa69b267da190ba9f4f16f569.jpg" alt="Event Branding" class="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105">
+</div>
+<div class="p-6">
+<span class="inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium mb-3">Graphic Design</span>
+<h3 class="text-xl font-bold text-gray-900 mb-2">Event Branding</h3>
+<p class="text-gray-700 mb-4">Complete visual identity for a three-day cultural festival, including logo, signage, promotional materials, and digital assets.</p>
+<a href="#" class="text-primary font-medium hover:underline flex items-center">
+View Project
+<div class="w-5 h-5 flex items-center justify-center ml-1">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
 
-            <!-- Article 8 -->
-            <article class="bg-white rounded-lg shadow-sm overflow-hidden transition duration-300 article-card">
-                <div class="aspect-[16/9] overflow-hidden">
-                    <img src="https://public.readdy.ai/ai/img_res/bd070b34dddda77e453c49bf63fd8687.jpg" alt="UX Design" class="w-full h-full object-cover object-top">
-                </div>
-                <div class="p-6">
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="px-3 py-1 bg-green-100 text-green-600 rounded-full text-xs font-medium">Design</span>
-                        <span class="text-gray-500 text-sm">8 min read</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">UX Design Principles for Media Websites</h3>
-                    <p class="text-gray-600 mb-4 line-clamp-3">Essential user experience design principles that media organizations should implement to enhance engagement, readability, and user satisfaction.</p>
-                    <div class="flex items-center justify-between">
-                        <span class="text-sm text-gray-500">February 15, 2025</span>
-                        <a href="#" class="text-primary font-medium flex items-center hover:underline !rounded-button whitespace-nowrap">
-                            Read more
-                            <i class="ri-arrow-right-line ml-1"></i>
-                        </a>
-                    </div>
-                </div>
-            </article>
+<!-- Portfolio Item 8 -->
+<div class="portfolio-item bg-white rounded-lg overflow-hidden shadow-sm transition-colors duration-300" data-category="journalism" data-date="2024-08-22">
+<div class="h-64 overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/b8c66499c82b2149527547c96e2e4e2.jpg" alt="Profile Series" class="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105">
+</div>
+<div class="p-6">
+<span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-medium mb-3">Journalism</span>
+<h3 class="text-xl font-bold text-gray-900 mb-2">Profile Series</h3>
+<p class="text-gray-700 mb-4">In-depth profiles of five emerging entrepreneurs in Kenya's tech sector, highlighting their innovations and impact on the local economy.</p>
+<a href="#" class="text-primary font-medium hover:underline flex items-center">
+Read Profiles
+<div class="w-5 h-5 flex items-center justify-center ml-1">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
 
-            <!-- Article 9 -->
-            <article class="bg-white rounded-lg shadow-sm overflow-hidden transition duration-300 article-card">
-                <div class="aspect-[16/9] overflow-hidden">
-                    <img src="https://public.readdy.ai/ai/img_res/083572562789b95407450fc521d0f075.jpg" alt="Podcast Production" class="w-full h-full object-cover object-top">
-                </div>
-                <div class="p-6">
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-xs font-medium">Media</span>
-                        <span class="text-gray-500 text-sm">7 min read</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">The Complete Guide to Podcast Production</h3>
-                    <p class="text-gray-600 mb-4 line-clamp-3">From planning and recording to editing and distribution, this comprehensive guide covers everything you need to know about creating professional podcasts.</p>
-                    <div class="flex items-center justify-between">
-                        <span class="text-sm text-gray-500">February 8, 2025</span>
-                        <a href="#" class="text-primary font-medium flex items-center hover:underline !rounded-button whitespace-nowrap">
-                            Read more
-                            <i class="ri-arrow-right-line ml-1"></i>
-                        </a>
-                    </div>
-                </div>
-            </article>
-        </div>
+<!-- Portfolio Item 9 -->
+<div class="portfolio-item bg-white rounded-lg overflow-hidden shadow-sm transition-colors duration-300" data-category="media" data-date="2024-07-10">
+<div class="h-64 overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/c4e459e2446e0be66d95104fd71b9ea2.jpg" alt="Radio Program" class="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105">
+</div>
+<div class="p-6">
+<span class="inline-block px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-xs font-medium mb-3">Media</span>
+<h3 class="text-xl font-bold text-gray-900 mb-2">Radio Program</h3>
+<p class="text-gray-700 mb-4">Weekly radio show focused on youth issues and community development, including content planning, script writing, and production.</p>
+<a href="#" class="text-primary font-medium hover:underline flex items-center">
+Listen to Episodes
+<div class="w-5 h-5 flex items-center justify-center ml-1">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
 
-        <!-- Load More -->
-        <div class="mt-12 text-center">
-            <button class="px-6 py-3 bg-primary text-white font-medium rounded-lg shadow-sm hover:bg-primary/90 transition !rounded-button whitespace-nowrap">
-                Load More Articles
-            </button>
-        </div>
-    </main>
+<!-- Portfolio Item 10 -->
+<div class="portfolio-item bg-white rounded-lg overflow-hidden shadow-sm transition-colors duration-300" data-category="graphic-design" data-date="2024-06-15">
+<div class="h-64 overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/d17460860fc0df34c1d2be2cfb53215c.jpg" alt="App UI Design" class="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105">
+</div>
+<div class="p-6">
+<span class="inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium mb-3">Graphic Design</span>
+<h3 class="text-xl font-bold text-gray-900 mb-2">App UI Design</h3>
+<p class="text-gray-700 mb-4">User interface design for a community-focused mobile application, including wireframes, visual design, and interactive prototypes.</p>
+<a href="#" class="text-primary font-medium hover:underline flex items-center">
+View Design
+<div class="w-5 h-5 flex items-center justify-center ml-1">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
 
-    <!-- Newsletter -->
-    <section class="bg-gray-100 py-16">
-        <div class="container mx-auto px-4">
-            <div class="max-w-2xl mx-auto text-center">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">Subscribe to My Newsletter</h2>
-                <p class="text-gray-600 mb-6">Get the latest articles, insights, and updates delivered directly to your inbox.</p>
-                <div class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-                    <input type="email" placeholder="Your email address" class="flex-1 px-4 py-3 rounded-lg border-none focus:ring-2 focus:ring-primary/20 text-gray-700">
-                    <button class="px-6 py-3 bg-primary text-white font-medium rounded-lg shadow-sm hover:bg-primary/90 transition !rounded-button whitespace-nowrap">Subscribe</button>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Portfolio Item 11 -->
+<div class="portfolio-item bg-white rounded-lg overflow-hidden shadow-sm transition-colors duration-300" data-category="journalism" data-date="2024-05-20">
+<div class="h-64 overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/e8c66499c82b2149527547c96e2e4e2.jpg" alt="Environmental Report" class="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105">
+</div>
+<div class="p-6">
+<span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-medium mb-3">Journalism</span>
+<h3 class="text-xl font-bold text-gray-900 mb-2">Environmental Report</h3>
+<p class="text-gray-700 mb-4">Special report on climate change impacts in East Africa, featuring data visualization, personal stories, and expert interviews.</p>
+<a href="#" class="text-primary font-medium hover:underline flex items-center">
+Read Report
+<div class="w-5 h-5 flex items-center justify-center ml-1">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
 
-    <!-- Footer -->
-    <footer class="bg-white py-12 border-t">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div>
-                    <a href="https://readdy.ai/home/29ad1170-30c7-4601-9c32-c827670146e4/cfe2e9f3-e808-40b4-9036-9fae3d599417" data-readdy="true" class="text-2xl font-['Pacifico'] text-primary">Meshack</a>
-                    <p class="mt-4 text-gray-600">Journalist, Media Expert, and Graphic Designer passionate about storytelling and visual communication.</p>
-                    <div class="flex space-x-4 mt-6">
-                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition">
-                            <i class="ri-twitter-x-line"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition">
-                            <i class="ri-linkedin-line"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition">
-                            <i class="ri-instagram-line"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition">
-                            <i class="ri-youtube-line"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <div>
-                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Quick Links</h3>
-                    <ul class="space-y-3">
-                        <li><a href="https://readdy.ai/home/29ad1170-30c7-4601-9c32-c827670146e4/cfe2e9f3-e808-40b4-9036-9fae3d599417" data-readdy="true" class="text-gray-600 hover:text-primary transition">Home</a></li>
-                        <li><a href="#" class="text-gray-600 hover:text-primary transition">About Me</a></li>
-                        <li><a href="#" class="text-gray-600 hover:text-primary transition">Portfolio</a></li>
-                        <li><a href="#" class="text-gray-600 hover:text-primary transition">Services</a></li>
-                        <li><a href="#" class="text-gray-600 hover:text-primary transition">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Categories</h3>
-                    <ul class="space-y-3">
-                        <li><a href="#" class="text-gray-600 hover:text-primary transition">Journalism</a></li>
-                        <li><a href="#" class="text-gray-600 hover:text-primary transition">Media Production</a></li>
-                        <li><a href="#" class="text-gray-600 hover:text-primary transition">Graphic Design</a></li>
-                        <li><a href="#" class="text-gray-600 hover:text-primary transition">Photography</a></li>
-                        <li><a href="#" class="text-gray-600 hover:text-primary transition">Content Creation</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Contact</h3>
-                    <ul class="space-y-3">
-                        <li class="flex items-start">
-                            <div class="w-5 h-5 flex items-center justify-center text-gray-500 mt-0.5 mr-3">
-                                <i class="ri-map-pin-line"></i>
-                            </div>
-                            <span class="text-gray-600">Nairobi, Kenya</span>
-                        </li>
-                        <li class="flex items-start">
-                            <div class="w-5 h-5 flex items-center justify-center text-gray-500 mt-0.5 mr-3">
-                                <i class="ri-mail-line"></i>
-                            </div>
-                            <span class="text-gray-600">meshack@example.com</span>
-                        </li>
-                        <li class="flex items-start">
-                            <div class="w-5 h-5 flex items-center justify-center text-gray-500 mt-0.5 mr-3">
-                                <i class="ri-phone-line"></i>
-                            </div>
-                            <span class="text-gray-600">+254 712 345 678</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="border-t mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-500 text-sm">© 2025 Meshack Kipchumba. All rights reserved.</p>
-                <div class="mt-4 md:mt-0 flex space-x-6">
-                    <a href="#" class="text-gray-500 hover:text-gray-700 text-sm">Privacy Policy</a>
-                    <a href="#" class="text-gray-500 hover:text-gray-700 text-sm">Terms of Service</a>
-                    <a href="#" class="text-gray-500 hover:text-gray-700 text-sm">Cookie Policy</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+<!-- Portfolio Item 12 -->
+<div class="portfolio-item bg-white rounded-lg overflow-hidden shadow-sm transition-colors duration-300" data-category="media" data-date="2024-04-08">
+<div class="h-64 overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/f4e459e2446e0be66d95104fd71b9ea2.jpg" alt="Social Media Strategy" class="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105">
+</div>
+<div class="p-6">
+<span class="inline-block px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-xs font-medium mb-3">Media</span>
+<h3 class="text-xl font-bold text-gray-900 mb-2">Social Media Strategy</h3>
+<p class="text-gray-700 mb-4">Comprehensive social media strategy for a local business, including content calendar, engagement tactics, and performance analytics.</p>
+<a href="#" class="text-primary font-medium hover:underline flex items-center">
+View Strategy
+<div class="w-5 h-5 flex items-center justify-center ml-1">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
 
-    <script>
-        // Mobile menu toggle
-        document.querySelector('.ri-menu-line').parentElement.addEventListener('click', function() {
-            // Mobile menu functionality would go here
-        });
+<!-- Portfolio Item 13 -->
+<div class="portfolio-item bg-white rounded-lg overflow-hidden shadow-sm transition-colors duration-300" data-category="graphic-design" data-date="2024-03-12">
+<div class="h-64 overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/e7b561caa69b267da190ba9f4f16f569.jpg" alt="Packaging Design" class="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105">
+</div>
+<div class="p-6">
+<span class="inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium mb-3">Graphic Design</span>
+<h3 class="text-xl font-bold text-gray-900 mb-2">Packaging Design</h3>
+<p class="text-gray-700 mb-4">Product packaging design for an organic skincare line, featuring sustainable materials and visually appealing graphics.</p>
+<a href="#" class="text-primary font-medium hover:underline flex items-center">
+View Project
+<div class="w-5 h-5 flex items-center justify-center ml-1">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+
+<!-- Portfolio Item 14 -->
+<div class="portfolio-item bg-white rounded-lg overflow-hidden shadow-sm transition-colors duration-300" data-category="journalism" data-date="2024-02-18">
+<div class="h-64 overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/f8c66499c82b2149527547c96e2e4e2.jpg" alt="Political Analysis" class="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105">
+</div>
+<div class="p-6">
+<span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-medium mb-3">Journalism</span>
+<h3 class="text-xl font-bold text-gray-900 mb-2">Political Analysis</h3>
+<p class="text-gray-700 mb-4">In-depth analysis of regional political developments, examining policy implications and public opinion through data and interviews.</p>
+<a href="#" class="text-primary font-medium hover:underline flex items-center">
+Read Analysis
+<div class="w-5 h-5 flex items-center justify-center ml-1">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+
+<!-- Portfolio Item 15 -->
+<div class="portfolio-item bg-white rounded-lg overflow-hidden shadow-sm transition-colors duration-300" data-category="media" data-date="2024-01-25">
+<div class="h-64 overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/g4e459e2446e0be66d95104fd71b9ea2.jpg" alt="Photo Exhibition" class="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105">
+</div>
+<div class="p-6">
+<span class="inline-block px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-xs font-medium mb-3">Media</span>
+<h3 class="text-xl font-bold text-gray-900 mb-2">Photo Exhibition</h3>
+<p class="text-gray-700 mb-4">Curated photography exhibition highlighting urban life in Nairobi, including image selection, printing, and exhibition design.</p>
+<a href="#" class="text-primary font-medium hover:underline flex items-center">
+View Gallery
+<div class="w-5 h-5 flex items-center justify-center ml-1">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+</div>
+
+<!-- Empty State (Hidden by default) -->
+<div id="empty-state" class="hidden flex flex-col items-center justify-center py-16">
+<img src="https://public.readdy.ai/ai/img_res/h4e459e2446e0be66d95104fd71b9ea2.jpg" alt="No results found" class="w-48 h-48 object-contain mb-6">
+<h3 class="text-xl font-bold text-gray-900 mb-2">No projects found</h3>
+<p class="text-gray-700 mb-6 text-center max-w-md">We couldn't find any projects matching your search criteria. Try adjusting your filters or search terms.</p>
+<button id="reset-filters" class="bg-primary hover:bg-primary/90 text-white px-6 py-3 !rounded-button font-medium transition-colors whitespace-nowrap">
+Reset Filters
+</button>
+</div>
+
+<!-- Loading State (Hidden by default) -->
+<div id="loading-state" class="hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="bg-white rounded-lg overflow-hidden shadow-sm">
+<div class="h-64 skeleton"></div>
+<div class="p-6">
+<div class="w-24 h-6 skeleton rounded-full mb-3"></div>
+<div class="w-full h-7 skeleton rounded mb-2"></div>
+<div class="w-full h-4 skeleton rounded mb-1"></div>
+<div class="w-3/4 h-4 skeleton rounded mb-4"></div>
+<div class="w-32 h-6 skeleton rounded"></div>
+</div>
+</div>
+<div class="bg-white rounded-lg overflow-hidden shadow-sm">
+<div class="h-64 skeleton"></div>
+<div class="p-6">
+<div class="w-24 h-6 skeleton rounded-full mb-3"></div>
+<div class="w-full h-7 skeleton rounded mb-2"></div>
+<div class="w-full h-4 skeleton rounded mb-1"></div>
+<div class="w-3/4 h-4 skeleton rounded mb-4"></div>
+<div class="w-32 h-6 skeleton rounded"></div>
+</div>
+</div>
+<div class="bg-white rounded-lg overflow-hidden shadow-sm">
+<div class="h-64 skeleton"></div>
+<div class="p-6">
+<div class="w-24 h-6 skeleton rounded-full mb-3"></div>
+<div class="w-full h-7 skeleton rounded mb-2"></div>
+<div class="w-full h-4 skeleton rounded mb-1"></div>
+<div class="w-3/4 h-4 skeleton rounded mb-4"></div>
+<div class="w-32 h-6 skeleton rounded"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Contact CTA -->
+<section class="py-16 bg-gradient-to-r from-indigo-50 to-purple-50">
+<div class="container mx-auto px-4">
+<div class="bg-white rounded-lg shadow-sm p-8 md:p-12 flex flex-col md:flex-row items-center justify-between">
+<div class="md:w-2/3 mb-8 md:mb-0">
+<h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Have a project in mind?</h2>
+<p class="text-gray-700">Let's collaborate and create something amazing together. I'm available for freelance work in journalism, media, and graphic design.</p>
+</div>
+<a href="https://readdy.ai/home/29ad1170-30c7-4601-9c32-c827670146e4/cfe2e9f3-e808-40b4-9036-9fae3d599417#contact" data-readdy="true" class="bg-primary hover:bg-primary/90 text-white px-6 py-3 !rounded-button font-medium transition-colors whitespace-nowrap flex items-center">
+<div class="w-5 h-5 flex items-center justify-center mr-2">
+<i class="ri-mail-line"></i>
+</div>
+Contact Me
+</a>
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-white py-12">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+<div>
+<a href="https://readdy.ai/home/29ad1170-30c7-4601-9c32-c827670146e4/cfe2e9f3-e808-40b4-9036-9fae3d599417" data-readdy="true" class="text-2xl font-['Pacifico'] text-white mb-4 inline-block">Meshack</a>
+<p class="text-gray-400 mb-6">Journalist, Media Expert & Graphic Designer dedicated to storytelling and visual creativity.</p>
+<div class="flex space-x-4">
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-twitter-x-line"></i>
+</div>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-linkedin-line"></i>
+</div>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-instagram-line"></i>
+</div>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-behance-line"></i>
+</div>
+</a>
+</div>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+<ul class="space-y-2">
+<li><a href="https://readdy.ai/home/29ad1170-30c7-4601-9c32-c827670146e4/cfe2e9f3-e808-40b4-9036-9fae3d599417" data-readdy="true" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+<li><a href="https://readdy.ai/home/29ad1170-30c7-4601-9c32-c827670146e4/cfe2e9f3-e808-40b4-9036-9fae3d599417#about" data-readdy="true" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+<li><a href="https://readdy.ai/home/29ad1170-30c7-4601-9c32-c827670146e4/cfe2e9f3-e808-40b4-9036-9fae3d599417#portfolio" data-readdy="true" class="text-gray-400 hover:text-white transition-colors">Portfolio</a></li>
+<li><a href="https://readdy.ai/home/29ad1170-30c7-4601-9c32-c827670146e4/cfe2e9f3-e808-40b4-9036-9fae3d599417#experience" data-readdy="true" class="text-gray-400 hover:text-white transition-colors">Experience</a></li>
+<li><a href="https://readdy.ai/home/29ad1170-30c7-4601-9c32-c827670146e4/cfe2e9f3-e808-40b4-9036-9fae3d599417#services" data-readdy="true" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-4">Services</h4>
+<ul class="space-y-2">
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Graphic Design</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Journalism</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Media Consulting</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Content Creation</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Brand Strategy</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-4">Newsletter</h4>
+<p class="text-gray-400 mb-4">Subscribe to receive updates on my latest work and articles.</p>
+<form class="flex">
+<input type="email" placeholder="Your email" class="px-4 py-2 w-full border-none rounded-l focus:outline-none text-gray-900">
+<button type="submit" class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-r whitespace-nowrap">Subscribe</button>
+</form>
+</div>
+</div>
+<div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-400 text-sm mb-4 md:mb-0">© 2025 Meshack Kipchumba. All rights reserved.</p>
+<div class="flex space-x-6">
+<a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Privacy Policy</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Terms of Service</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Cookie Policy</a>
+</div>
+</div>
+</div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Mobile Menu Toggle
+  const menuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  menuButton.addEventListener('click', function() {
+    mobileMenu.classList.toggle('hidden');
+  });
+
+  // Theme toggle functionality
+  const themeToggle = document.getElementById('theme-toggle');
+  const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
+  const body = document.body;
+  
+  // Check for saved theme preference or use preferred color scheme
+  const savedTheme = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  
+  // Set initial theme
+  if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+    body.classList.add('dark-mode');
+    themeToggle.checked = true;
+    mobileThemeToggle.checked = true;
+  } else {
+    body.classList.add('light-mode');
+    themeToggle.checked = false;
+    mobileThemeToggle.checked = false;
+  }
+  
+  function toggleDarkMode() {
+    if (body.classList.contains('light-mode')) {
+      body.classList.replace('light-mode', 'dark-mode');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      body.classList.replace('dark-mode', 'light-mode');
+      localStorage.setItem('theme', 'light');
+    }
+  }
+  
+  themeToggle.addEventListener('change', toggleDarkMode);
+  mobileThemeToggle.addEventListener('change', toggleDarkMode);
+  
+  // Sync both toggles
+  themeToggle.addEventListener('change', () => {
+    mobileThemeToggle.checked = themeToggle.checked;
+  });
+  
+  mobileThemeToggle.addEventListener('change', () => {
+    themeToggle.checked = mobileThemeToggle.checked;
+  });
+
+  // Navbar scroll effect
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 100) {
+      navbar.classList.add('py-2', 'shadow-md');
+      navbar.classList.remove('py-3', 'shadow-sm');
+    } else {
+      navbar.classList.add('py-3', 'shadow-sm');
+      navbar.classList.remove('py-2', 'shadow-md');
+    }
+  });
+
+  // Sort dropdown functionality
+  const sortButton = document.getElementById('sort-button');
+  const sortDropdown = document.getElementById('sort-dropdown');
+  const sortLabel = document.getElementById('sort-label');
+  const sortOptions = document.querySelectorAll('.sort-option');
+  
+  sortButton.addEventListener('click', function() {
+    sortDropdown.classList.toggle('hidden');
+  });
+  
+  document.addEventListener('click', function(e) {
+    if (!sortButton.contains(e.target) && !sortDropdown.contains(e.target)) {
+      sortDropdown.classList.add('hidden');
+    }
+  });
+  
+  sortOptions.forEach(option => {
+    option.addEventListener('click', function() {
+      const sortValue = this.getAttribute('data-sort');
+      sortLabel.textContent = this.textContent;
+      sortDropdown.classList.add('hidden');
+      
+      // Remove active class from all options
+      sortOptions.forEach(opt => opt.classList.remove('active'));
+      
+      // Add active class to clicked option
+      this.classList.add('active');
+      
+      // Apply sorting
+      applyFilters();
+    });
+  });
+
+  // Category filter functionality
+  const categoryFilters = document.querySelectorAll('.category-filter');
+  let currentCategory = 'all';
+  
+  categoryFilters.forEach(filter => {
+    filter.addEventListener('click', function() {
+      // Remove active class from all filters
+      categoryFilters.forEach(f => f.classList.remove('active', 'bg-primary', 'text-white'));
+      categoryFilters.forEach(f => f.classList.add('bg-white', 'text-gray-800', 'hover:bg-gray-100'));
+      
+      // Add active class to clicked filter
+      this.classList.add('active', 'bg-primary', 'text-white');
+      this.classList.remove('bg-white', 'text-gray-800', 'hover:bg-gray-100');
+      
+      // Update current category
+      currentCategory = this.getAttribute('data-filter');
+      
+      // Apply filters
+      applyFilters();
+    });
+  });
+
+  // Search functionality
+  const searchInput = document.getElementById('search-projects');
+  let searchTimeout;
+  
+  searchInput.addEventListener('input', function() {
+    clearTimeout(searchTimeout);
+    searchTimeout = setTimeout(() => {
+      applyFilters();
+    }, 300);
+  });
+
+  // Reset filters button
+  const resetFiltersButton = document.getElementById('reset-filters');
+  
+  resetFiltersButton.addEventListener('click', function() {
+    // Reset search
+    searchInput.value = '';
+    
+    // Reset category filter
+    categoryFilters.forEach(f => f.classList.remove('active', 'bg-primary', 'text-white'));
+    categoryFilters.forEach(f => f.classList.add('bg-white', 'text-gray-800', 'hover:bg-gray-100'));
+    categoryFilters[0].classList.add('active', 'bg-primary', 'text-white');
+    categoryFilters[0].classList.remove('bg-white', 'text-gray-800', 'hover:bg-gray-100');
+    currentCategory = 'all';
+    
+    // Reset sort
+    sortOptions.forEach(opt => opt.classList.remove('active'));
+    sortOptions[0].classList.add('active');
+    sortLabel.textContent = sortOptions[0].textContent;
+    
+    // Apply filters
+    applyFilters();
+  });
+
+  // Apply all filters and sorting
+  function applyFilters() {
+    const portfolioGrid = document.getElementById('portfolio-grid');
+    const emptyState = document.getElementById('empty-state');
+    const portfolioCount = document.getElementById('portfolio-count');
+    const loadingState = document.getElementById('loading-state');
+    
+    // Show loading state
+    portfolioGrid.classList.add('hidden');
+    emptyState.classList.add('hidden');
+    loadingState.classList.remove('hidden');
+    
+    // Simulate loading delay
+    setTimeout(() => {
+      // Get current filters
+      const searchQuery = searchInput.value.toLowerCase();
+      const sortValue = document.querySelector('.sort-option.active').getAttribute('data-sort');
+      
+      // Get all portfolio items
+      const portfolioItems = document.querySelectorAll('.portfolio-item');
+      let visibleCount = 0;
+      
+      // Filter items
+      portfolioItems.forEach(item => {
+        const itemCategory = item.getAttribute('data-category');
+        const itemTitle = item.querySelector('h3').textContent.toLowerCase();
+        const itemDescription = item.querySelector('p').textContent.toLowerCase();
         
-        // Category filter functionality
-        const categoryButtons = document.querySelectorAll('.rounded-full.bg-gray-100 button');
-        categoryButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                categoryButtons.forEach(btn => {
-                    btn.classList.remove('bg-primary', 'text-white');
-                    btn.classList.add('text-gray-600', 'hover:bg-gray-200');
-                });
-                this.classList.remove('text-gray-600', 'hover:bg-gray-200');
-                this.classList.add('bg-primary', 'text-white');
-            });
+        const matchesCategory = currentCategory === 'all' || itemCategory === currentCategory;
+        const matchesSearch = searchQuery === '' || 
+                             itemTitle.includes(searchQuery) || 
+                             itemDescription.includes(searchQuery);
+        
+        if (matchesCategory && matchesSearch) {
+          item.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+      
+      // Sort items
+      const sortedItems = Array.from(portfolioItems).filter(item => !item.classList.contains('hidden'));
+      
+      if (sortValue === 'latest') {
+        sortedItems.sort((a, b) => {
+          return new Date(b.getAttribute('data-date')) - new Date(a.getAttribute('data-date'));
         });
-    </script>
+      } else if (sortValue === 'oldest') {
+        sortedItems.sort((a, b) => {
+          return new Date(a.getAttribute('data-date')) - new Date(b.getAttribute('data-date'));
+        });
+      } else if (sortValue === 'a-z') {
+        sortedItems.sort((a, b) => {
+          return a.querySelector('h3').textContent.localeCompare(b.querySelector('h3').textContent);
+        });
+      } else if (sortValue === 'z-a') {
+        sortedItems.sort((a, b) => {
+          return b.querySelector('h3').textContent.localeCompare(a.querySelector('h3').textContent);
+        });
+      }
+      
+      // Reorder DOM elements
+      sortedItems.forEach(item => {
+        portfolioGrid.appendChild(item);
+      });
+      
+      // Update count
+      portfolioCount.textContent = `Showing ${visibleCount} of 15 projects`;
+      
+      // Show empty state if no results
+      if (visibleCount === 0) {
+        portfolioGrid.classList.add('hidden');
+        emptyState.classList.remove('hidden');
+      } else {
+        portfolioGrid.classList.remove('hidden');
+        emptyState.classList.add('hidden');
+      }
+      
+      // Hide loading state
+      loadingState.classList.add('hidden');
+    }, 500);
+  }
+});
+</script>
 </body>
 </html>

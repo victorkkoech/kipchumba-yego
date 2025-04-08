@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meshack Kipchumba - Blog Articles</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#3b82f6',secondary:'#10b981'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .article-card:hover {
+            transform: translateY(-4px);
+        }
+        input[type="search"]::-webkit-search-decoration,
+        input[type="search"]::-webkit-search-cancel-button,
+        input[type="search"]::-webkit-search-results-button,
+        input[type="search"]::-webkit-search-results-decoration {
+            display: none;
+        }
+        input[type="search"] {
+            -webkit-appearance: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="https://readdy.ai/home/29ad1170-30c7-4601-9c32-c827670146e4/cfe2e9f3-e808-40b4-9036-9fae3d599417" data-readdy="true" class="text-2xl font-['Pacifico'] text-primary">Meshack</a>
+            
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="https://readdy.ai/home/29ad1170-30c7-4601-9c32-c827670146e4/cfe2e9f3-e808-40b4-9036-9fae3d599417" data-readdy="true" class="text-gray-600 hover:text-primary transition">Home</a>
+                <a href="#" class="text-primary font-medium">Blog</a>
+                <a href="#" class="text-gray-600 hover:text-primary transition">Portfolio</a>
+                <a href="#" class="text-gray-600 hover:text-primary transition">About</a>
+                <a href="#" class="text-gray-600 hover:text-primary transition">Contact</a>
+            </nav>
+            
+            <div class="flex items-center space-x-4">
+                <button class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-gray-200 transition">
+                    <i class="ri-moon-line text-lg"></i>
+                </button>
+                
+                <button class="md:hidden w-10 h-10 flex items-center justify-center">
+                    <i class="ri-menu-line text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Title -->
+    <section class="bg-white border-b">
+        <div class="container mx-auto px-4 py-12">
+            <div class="flex items-center mb-4">
+                <a href="https://readdy.ai/home/29ad1170-30c7-4601-9c32-c827670146e4/cfe2e9f3-e808-40b4-9036-9fae3d599417" data-readdy="true" class="flex items-center text-gray-600 hover:text-primary transition">
+                    <i class="ri-arrow-left-line mr-2"></i>
+                    <span>Back to Home</span>
+                </a>
+            </div>
+            <h1 class="text-4xl font-bold text-gray-900">Blog Articles</h1>
+            <p class="mt-2 text-gray-600 max-w-2xl">Explore my thoughts, insights, and expertise on journalism, media, and graphic design through these articles.</p>
+        </div>
+    </section>
+
+    <!-- Filter and Search -->
+    <section class="bg-white py-6 border-b sticky top-[72px] z-40">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <!-- Category Tabs -->
+                <div class="inline-flex p-1 bg-gray-100 rounded-full">
+                    <button class="px-4 py-2 rounded-full bg-primary text-white font-medium !rounded-button whitespace-nowrap">All</button>
+                    <button class="px-4 py-2 rounded-full text-gray-600 hover:bg-gray-200 font-medium !rounded-button whitespace-nowrap">Journalism</button>
+                    <button class="px-4 py-2 rounded-full text-gray-600 hover:bg-gray-200 font-medium !rounded-button whitespace-nowrap">Media</button>
+                    <button class="px-4 py-2 rounded-full text-gray-600 hover:bg-gray-200 font-medium !rounded-button whitespace-nowrap">Design</button>
+                </div>
+                
+                <!-- Search -->
+                <div class="relative w-full md:w-64">
+                    <input type="search" placeholder="Search articles..." class="w-full pl-10 pr-4 py-2 bg-gray-100 rounded-full text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary/20 border-none text-sm">
+                    <div class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center text-gray-500">
+                        <i class="ri-search-line"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Active Filters -->
+            <div class="flex items-center gap-2 mt-4">
+                <span class="text-sm text-gray-500">Active filters:</span>
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary text-sm">
+                        All
+                        <button class="ml-1 w-4 h-4 flex items-center justify-center">
+                            <i class="ri-close-line text-xs"></i>
+                        </button>
+                    </span>
+                    <button class="text-sm text-gray-500 hover:text-primary">Clear all</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Articles Grid -->
+    <main class="container mx-auto px-4 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Article 1 -->
+            <article class="bg-white rounded-lg shadow-sm overflow-hidden transition duration-300 article-card">
+                <div class="aspect-[16/9] overflow-hidden">
+                    <img src="https://public.readdy.ai/ai/img_res/0e9377b806e9dbe615b9f8943e502eb5.jpg" alt="The Future of Journalism" class="w-full h-full object-cover object-top">
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="px-3 py-1 bg-blue-100 text-primary rounded-full text-xs font-medium">Journalism</span>
+                        <span class="text-gray-500 text-sm">5 min read</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">The Future of Journalism in the Digital Age</h3>
+                    <p class="text-gray-600 mb-4 line-clamp-3">Exploring how technology is reshaping journalism practices and what it means for media professionals in an increasingly digital landscape.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-500">April 2, 2025</span>
+                        <a href="#" class="text-primary font-medium flex items-center hover:underline !rounded-button whitespace-nowrap">
+                            Read more
+                            <i class="ri-arrow-right-line ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 2 -->
+            <article class="bg-white rounded-lg shadow-sm overflow-hidden transition duration-300 article-card">
+                <div class="aspect-[16/9] overflow-hidden">
+                    <img src="https://public.readdy.ai/ai/img_res/1b3a8871f93f693a484e8ee9d6d93d8c.jpg" alt="Design Principles" class="w-full h-full object-cover object-top">
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="px-3 py-1 bg-green-100 text-green-600 rounded-full text-xs font-medium">Design</span>
+                        <span class="text-gray-500 text-sm">8 min read</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Essential Design Principles Every Graphic Designer Should Know</h3>
+                    <p class="text-gray-600 mb-4 line-clamp-3">A comprehensive guide to the fundamental principles that form the foundation of effective graphic design and visual communication.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-500">March 28, 2025</span>
+                        <a href="#" class="text-primary font-medium flex items-center hover:underline !rounded-button whitespace-nowrap">
+                            Read more
+                            <i class="ri-arrow-right-line ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 3 -->
+            <article class="bg-white rounded-lg shadow-sm overflow-hidden transition duration-300 article-card">
+                <div class="aspect-[16/9] overflow-hidden">
+                    <img src="https://public.readdy.ai/ai/img_res/18d9134ccb8d422d0a32e67fcea8cda3.jpg" alt="Media Production" class="w-full h-full object-cover object-top">
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-xs font-medium">Media</span>
+                        <span class="text-gray-500 text-sm">6 min read</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">How to Build an Effective Media Production Team</h3>
+                    <p class="text-gray-600 mb-4 line-clamp-3">Insights into assembling and managing a high-performing media production team that delivers exceptional content consistently.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-500">March 21, 2025</span>
+                        <a href="#" class="text-primary font-medium flex items-center hover:underline !rounded-button whitespace-nowrap">
+                            Read more
+                            <i class="ri-arrow-right-line ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 4 -->
+            <article class="bg-white rounded-lg shadow-sm overflow-hidden transition duration-300 article-card">
+                <div class="aspect-[16/9] overflow-hidden">
+                    <img src="https://public.readdy.ai/ai/img_res/ca28a620a6f685c9e3474a12c47bd510.jpg" alt="Ethical Journalism" class="w-full h-full object-cover object-top">
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="px-3 py-1 bg-blue-100 text-primary rounded-full text-xs font-medium">Journalism</span>
+                        <span class="text-gray-500 text-sm">7 min read</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Ethical Challenges in Modern Journalism</h3>
+                    <p class="text-gray-600 mb-4 line-clamp-3">Examining the ethical dilemmas journalists face today and strategies for maintaining integrity in an era of misinformation and political polarization.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-500">March 15, 2025</span>
+                        <a href="#" class="text-primary font-medium flex items-center hover:underline !rounded-button whitespace-nowrap">
+                            Read more
+                            <i class="ri-arrow-right-line ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 5 -->
+            <article class="bg-white rounded-lg shadow-sm overflow-hidden transition duration-300 article-card">
+                <div class="aspect-[16/9] overflow-hidden">
+                    <img src="https://public.readdy.ai/ai/img_res/0bf8872e1b86363648f73eef21d08382.jpg" alt="Brand Identity" class="w-full h-full object-cover object-top">
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="px-3 py-1 bg-green-100 text-green-600 rounded-full text-xs font-medium">Design</span>
+                        <span class="text-gray-500 text-sm">9 min read</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Creating a Memorable Brand Identity Through Design</h3>
+                    <p class="text-gray-600 mb-4 line-clamp-3">A step-by-step guide to developing a cohesive and impactful brand identity that resonates with your target audience and stands out in the market.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-500">March 8, 2025</span>
+                        <a href="#" class="text-primary font-medium flex items-center hover:underline !rounded-button whitespace-nowrap">
+                            Read more
+                            <i class="ri-arrow-right-line ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 6 -->
+            <article class="bg-white rounded-lg shadow-sm overflow-hidden transition duration-300 article-card">
+                <div class="aspect-[16/9] overflow-hidden">
+                    <img src="https://public.readdy.ai/ai/img_res/7e152fcd9bb743a230e9eda408b8cebe.jpg" alt="Social Media Strategy" class="w-full h-full object-cover object-top">
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-xs font-medium">Media</span>
+                        <span class="text-gray-500 text-sm">5 min read</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Developing an Effective Social Media Strategy for Media Organizations</h3>
+                    <p class="text-gray-600 mb-4 line-clamp-3">Strategic approaches to leveraging social media platforms to expand reach, engage audiences, and drive traffic to your media content.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-500">March 1, 2025</span>
+                        <a href="#" class="text-primary font-medium flex items-center hover:underline !rounded-button whitespace-nowrap">
+                            Read more
+                            <i class="ri-arrow-right-line ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 7 -->
+            <article class="bg-white rounded-lg shadow-sm overflow-hidden transition duration-300 article-card">
+                <div class="aspect-[16/9] overflow-hidden">
+                    <img src="https://public.readdy.ai/ai/img_res/ff36527ae9a86211dab841edde887a26.jpg" alt="Conflict Reporting" class="w-full h-full object-cover object-top">
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="px-3 py-1 bg-blue-100 text-primary rounded-full text-xs font-medium">Journalism</span>
+                        <span class="text-gray-500 text-sm">10 min read</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">The Art and Ethics of Conflict Reporting</h3>
+                    <p class="text-gray-600 mb-4 line-clamp-3">An in-depth look at the challenges, responsibilities, and best practices for journalists covering conflicts and crisis situations around the world.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-500">February 22, 2025</span>
+                        <a href="#" class="text-primary font-medium flex items-center hover:underline !rounded-button whitespace-nowrap">
+                            Read more
+                            <i class="ri-arrow-right-line ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 8 -->
+            <article class="bg-white rounded-lg shadow-sm overflow-hidden transition duration-300 article-card">
+                <div class="aspect-[16/9] overflow-hidden">
+                    <img src="https://public.readdy.ai/ai/img_res/bd070b34dddda77e453c49bf63fd8687.jpg" alt="UX Design" class="w-full h-full object-cover object-top">
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="px-3 py-1 bg-green-100 text-green-600 rounded-full text-xs font-medium">Design</span>
+                        <span class="text-gray-500 text-sm">8 min read</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">UX Design Principles for Media Websites</h3>
+                    <p class="text-gray-600 mb-4 line-clamp-3">Essential user experience design principles that media organizations should implement to enhance engagement, readability, and user satisfaction.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-500">February 15, 2025</span>
+                        <a href="#" class="text-primary font-medium flex items-center hover:underline !rounded-button whitespace-nowrap">
+                            Read more
+                            <i class="ri-arrow-right-line ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 9 -->
+            <article class="bg-white rounded-lg shadow-sm overflow-hidden transition duration-300 article-card">
+                <div class="aspect-[16/9] overflow-hidden">
+                    <img src="https://public.readdy.ai/ai/img_res/083572562789b95407450fc521d0f075.jpg" alt="Podcast Production" class="w-full h-full object-cover object-top">
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-xs font-medium">Media</span>
+                        <span class="text-gray-500 text-sm">7 min read</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">The Complete Guide to Podcast Production</h3>
+                    <p class="text-gray-600 mb-4 line-clamp-3">From planning and recording to editing and distribution, this comprehensive guide covers everything you need to know about creating professional podcasts.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-500">February 8, 2025</span>
+                        <a href="#" class="text-primary font-medium flex items-center hover:underline !rounded-button whitespace-nowrap">
+                            Read more
+                            <i class="ri-arrow-right-line ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <!-- Load More -->
+        <div class="mt-12 text-center">
+            <button class="px-6 py-3 bg-primary text-white font-medium rounded-lg shadow-sm hover:bg-primary/90 transition !rounded-button whitespace-nowrap">
+                Load More Articles
+            </button>
+        </div>
+    </main>
+
+    <!-- Newsletter -->
+    <section class="bg-gray-100 py-16">
+        <div class="container mx-auto px-4">
+            <div class="max-w-2xl mx-auto text-center">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Subscribe to My Newsletter</h2>
+                <p class="text-gray-600 mb-6">Get the latest articles, insights, and updates delivered directly to your inbox.</p>
+                <div class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+                    <input type="email" placeholder="Your email address" class="flex-1 px-4 py-3 rounded-lg border-none focus:ring-2 focus:ring-primary/20 text-gray-700">
+                    <button class="px-6 py-3 bg-primary text-white font-medium rounded-lg shadow-sm hover:bg-primary/90 transition !rounded-button whitespace-nowrap">Subscribe</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white py-12 border-t">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <a href="https://readdy.ai/home/29ad1170-30c7-4601-9c32-c827670146e4/cfe2e9f3-e808-40b4-9036-9fae3d599417" data-readdy="true" class="text-2xl font-['Pacifico'] text-primary">Meshack</a>
+                    <p class="mt-4 text-gray-600">Journalist, Media Expert, and Graphic Designer passionate about storytelling and visual communication.</p>
+                    <div class="flex space-x-4 mt-6">
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition">
+                            <i class="ri-twitter-x-line"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition">
+                            <i class="ri-linkedin-line"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition">
+                            <i class="ri-youtube-line"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="https://readdy.ai/home/29ad1170-30c7-4601-9c32-c827670146e4/cfe2e9f3-e808-40b4-9036-9fae3d599417" data-readdy="true" class="text-gray-600 hover:text-primary transition">Home</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary transition">About Me</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary transition">Portfolio</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary transition">Services</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Categories</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-600 hover:text-primary transition">Journalism</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary transition">Media Production</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary transition">Graphic Design</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary transition">Photography</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary transition">Content Creation</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Contact</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center text-gray-500 mt-0.5 mr-3">
+                                <i class="ri-map-pin-line"></i>
+                            </div>
+                            <span class="text-gray-600">Nairobi, Kenya</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center text-gray-500 mt-0.5 mr-3">
+                                <i class="ri-mail-line"></i>
+                            </div>
+                            <span class="text-gray-600">meshack@example.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center text-gray-500 mt-0.5 mr-3">
+                                <i class="ri-phone-line"></i>
+                            </div>
+                            <span class="text-gray-600">+254 712 345 678</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm">© 2025 Meshack Kipchumba. All rights reserved.</p>
+                <div class="mt-4 md:mt-0 flex space-x-6">
+                    <a href="#" class="text-gray-500 hover:text-gray-700 text-sm">Privacy Policy</a>
+                    <a href="#" class="text-gray-500 hover:text-gray-700 text-sm">Terms of Service</a>
+                    <a href="#" class="text-gray-500 hover:text-gray-700 text-sm">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.ri-menu-line').parentElement.addEventListener('click', function() {
+            // Mobile menu functionality would go here
+        });
+        
+        // Category filter functionality
+        const categoryButtons = document.querySelectorAll('.rounded-full.bg-gray-100 button');
+        categoryButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                categoryButtons.forEach(btn => {
+                    btn.classList.remove('bg-primary', 'text-white');
+                    btn.classList.add('text-gray-600', 'hover:bg-gray-200');
+                });
+                this.classList.remove('text-gray-600', 'hover:bg-gray-200');
+                this.classList.add('bg-primary', 'text-white');
+            });
+        });
+    </script>
+</body>
+</html>

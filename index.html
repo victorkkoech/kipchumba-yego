@@ -1617,6 +1617,41 @@ errorMessage.remove();
 });
 }
 });
+  
+const words = [
+  "A journalist 📰",
+  "Media expert 🎙️",
+  "Graphic designer 🎨"
+];
+
+let currentWord = 0;
+let currentLetter = 0;
+let isDeleting = false;
+const typedText = document.getElementById("typed-text");
+
+function type() {
+  const current = words[currentWord];
+  if (isDeleting) {
+    currentLetter--;
+    typedText.textContent = current.substring(0, currentLetter);
+  } else {
+    currentLetter++;
+    typedText.textContent = current.substring(0, currentLetter);
+  }
+
+  if (!isDeleting && currentLetter === current.length) {
+    isDeleting = true;
+    setTimeout(type, 2000);
+  } else if (isDeleting && currentLetter === 0) {
+    isDeleting = false;
+    currentWord = (currentWord + 1) % words.length;
+    setTimeout(type, 800);
+  } else {
+    setTimeout(type, isDeleting ? 40 : 80);
+  }
+}
+
+type();
 </script>
 </body>
 </html>

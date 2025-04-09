@@ -329,6 +329,28 @@ body.dark-mode header {
   -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* subtle border in dark mode */
 }
+
+/* --- Typing Effect Styles --- */
+.typing-container {
+  font-size: 48px;
+  font-weight: bold;
+  background: linear-gradient(90deg, #ff4e50, #f9d423, #24fe41, #00c6ff, #8e2de2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow-text 5s ease-in-out infinite;
+}
+
+.cursor {
+  display: inline-block;
+  background-color: white;
+  width: 3px;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
 </style>
 </head>
 <body class="light-mode">
